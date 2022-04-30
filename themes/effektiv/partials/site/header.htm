@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xl-4">
+            <div id="menu-title" class="center" data-bs-toggle="modal" data-bs-target="#menu-model">
+                <div>
+                    <i aria-hidden="true" class="fas fa-bars"></i>
+                    <span class="d-none d-sm-inline-block">КАТАЛОГ</span>
+                </div>
+            </div>
+        </div>
+        <div class="logo col-xl-4">
+            <a href="{{ 'index'|page }}">
+                <img src="https://effektiv.shop/wp-content/uploads/2020/10/Effektiv_TransparentB_444x75.png" alt="" class="center">
+            </a>
+        </div>
+        <div class="col-xl-4">
+            <div class="w-25 text-right">
+            <!--{% component 'localePicker' %}-->
+            </div>
+            {% for code, name in localePicker.locales %}
+                <a rel="alternate {{ activeLocale }}" href="{{ url(code) }}">{{ code }}</a>
+            {% endfor %}
+        </div>
+    </div>
+</div>

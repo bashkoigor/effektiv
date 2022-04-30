@@ -1,0 +1,29 @@
+{% set activeNavLink = activeNavLink|default(this.page.id) %}
+<div class="container">
+    <div class="row" id="hide">
+        <div class="col-xl-12">
+            <ul class="nav nav-pills justify-content-center">
+                <li>
+                    <a class="link {{ activeNavLink == 'about' ? 'active' }}" href="{{ 'about'|page }}">
+                        {{ 'О Нас'|_ }}
+                    </a>
+                </li>
+                <li>
+                    <a class="link {{ activeNavLink == 'nashe-kachestvo' ? 'active' }}" href="{{ 'nashe-kachestvo'|page }}">
+                        {{ 'Наше качество'|_ }}
+                    </a>
+                </li>
+                <li>
+                    <a class="link {{ activeNavLink == 'podderzhka' ? 'active' }}" href="{{ 'podderzhka'|page }}">
+                        {{ 'Поддержка'|_ }}
+                    </a>
+                </li>
+                <li>
+                    <a class="link {{ activeNavLink == 'kontakty' ? 'active' }}" href="{{ 'kontakty'|page }}">
+                        {{ 'Контакты'|_ }}
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

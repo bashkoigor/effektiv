@@ -1,0 +1,40 @@
+description = "Default layout"
+
+[localePicker]
+forceUrl = 1
+==
+<!doctype html>
+<html lang="en">
+    <head>
+        {% partial 'site/meta' %}
+    </head>
+    <body class="{{ 'page-'~this.page.id }}">
+
+        <!-- Header -->
+        <header class="sticky-top">
+            {% partial 'site/header' %}
+        </header>
+
+        <!-- Menu -->
+        <section class="menu">
+            {% partial 'site/menu' %}
+        </section>
+
+        <!-- Content -->
+        <div class="main-page">
+            {% page %}
+        </div>
+
+        <!-- Footer -->
+        <footer class="background-black pt-5">
+            {% partial 'site/footer' %}
+        </footer>
+
+        <!-- Mobile menu -->
+        {% partial 'site/mobile-menu' %}
+
+        <!-- Scripts -->
+        {% partial 'site/script' %}
+
+    </body>
+</html>
