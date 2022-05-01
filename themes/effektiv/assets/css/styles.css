@@ -325,20 +325,20 @@ header { background: #1E252B; padding: 20px 0; }
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-.categories .icon-02:before { content: '\e800'; } /* 'î €' */
-.categories .icon-05:before { content: '\e801'; } /* 'î ' */
-.categories .icon-04:before { content: '\e802'; } /* 'î ‚' */
-.categories .icon-03:before { content: '\e803'; } /* 'î ƒ' */
+.categories .icon-1:before { content: '\e800'; } /* 'î €' */
+.categories .icon-4:before { content: '\e801'; } /* 'î ' */
+.categories .icon-3:before { content: '\e802'; } /* 'î ‚' */
+.categories .icon-2:before { content: '\e803'; } /* 'î ƒ' */
 .categories .icon-filter:before { content: '\f0b0'; } /* 'ï‚°' */
 
 .main-page .categories a:hover{ border-bottom: 3px solid #CC1F4A; }
 .main-page .categories a { color: black; padding-bottom: 6px; }
 .categories .icon { font-size: 98px; }
 .categories .divider { border-bottom: 1px solid; width: 50%; margin: 0 auto;}
-.categories .color-2 { color: #d00c4a; }
-.categories .color-3 { color: #C5E128; }
-.categories .color-4 { color: #AF90D8; }
-.categories .color-5 { color: #94786E; }
+.categories .color-1 { color: #d00c4a; }
+.categories .color-2 { color: #C5E128; }
+.categories .color-3 { color: #AF90D8; }
+.categories .color-4 { color: #94786E; }
 .categories h2 { font-size: 14px; font-weight: 700; }
 .categories ul { list-style-type: none; padding: 0; text-align: center;}
 #menu-content a { color: #398ffc; font-size: 14px; text-align: center; }

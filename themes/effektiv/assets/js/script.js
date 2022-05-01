@@ -1,3 +1,7 @@
+// Modal menu by Ajax, show categorys.
+$.request('onAjax', {
+    update: { 'site/modal-menu': '.modal-menu-wrap' }
+});
 // Enable tooltips everywhere
 var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
 var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {

@@ -1,0 +1,40 @@
+{% set obCategoryList = CategoryList.make().tree() %}
+<div class="modal fade" id="menu-model" tabindex="-1" aria-labelledby="menu-model" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+            <div id="menu-content">
+                <i class="fa-solid fa-xmark" data-bs-dismiss="modal"></i>
+                <div class="container categories">
+                    <div class="row">
+                        <div class="logo col-xl-12">
+                            <img src="https://effektiv.shop/wp-content/uploads/2020/10/Effektiv_Transparent_444x70.png" alt="" class="center">
+                        </div>
+                    </div>
+                    {% if obCategoryList.isNotEmpty() %}
+                        <div class="row top-buffer-80">
+                            {# TODO: if obParentCategory.product_count > 0 #}
+                            {% for obParentCategory in obCategoryList %}
+                                <div class="col-lg">
+                                    <ul class="item">
+                                        <li><i aria-hidden="true" class="icon icon-{{ obParentCategory.id }} color-{{ obParentCategory.id }}"></i></li>
+                                        <li><h2 class="title">{{ obParentCategory.name }}</h2></li>
+                                        <li><div class="divider color-{{ obParentCategory.id }}"></div></li>
+                                        <li>
+                                            {% if obParentCategory.children.isNotEmpty() %}
+                                                <ul>
+                                                    {% for obChildCategory in obParentCategory.children %}
+                                                        <li class=""><a href="{{ obChildCategory.getPageUrl('catalog') }}">{{ obChildCategory.name }}</a></li>
+                                                    {% endfor %}
+                                                </ul>
+                                            {% endif %}
+                                        </li>
+                                    </ul>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
