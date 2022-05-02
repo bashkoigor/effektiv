@@ -482,6 +482,7 @@ footer .list-inline-item a svg { width: 30px; }
 }
 .catalog-page img { width: 100% }
 .catalog-page a { color: black; }
+.catalog-page a:hover { background-color: rgba(192,192,192, 0.1); }
 .catalog-page .card-title { text-align: center; }
 .catalog-page .card { box-shadow: -4px 10px 14px 0px rgb(0 0 0 / 50%); border: none; }
 .cart-page table img { width: 20%; }
