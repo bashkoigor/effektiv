@@ -1,0 +1,21 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb mb-0" itemscope itemtype="https://schema.org/BreadcrumbList">
+        {% for item in arBreadcrumbs %}
+            {% if item.name is not empty %}
+                {% if loop.last %}
+                    <li class="breadcrumb-item active" aria-current="page" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <span itemprop="name">{{ item.name }}</span>
+                        <meta itemprop="position" content="{{ loop.index -1 }}">
+                    </li>
+                {% else %}
+                    <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                        <a href="{{ item.url }}" itemprop="item">
+                            <span itemprop="name">{{ item.name }}</span>
+                            <meta itemprop="position" content="{{ loop.index -1 }}">
+                        </a>
+                    </li>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    </ol>
+</nav>

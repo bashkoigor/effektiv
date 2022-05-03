@@ -1,0 +1,38 @@
+title = "Товар"
+url = "/product/:slug"
+layout = "default"
+is_hidden = 0
+
+[ProductPage]
+slug = "{{ :slug }}"
+slug_required = 1
+smart_url_check = 1
+skip_error = 0
+
+[Breadcrumbs]
+==
+function onInit() {
+    $obProduct = $this->ProductPage->get();
+    $obOffer = $obProduct->offer->first();
+    if (!empty($this->param('slug')) && empty($obProduct)) {
+        return $this->ProductPage->getErrorResponse();
+    }
+
+    $obCategory     = $obProduct->category;
+    $obMainCategory = $obCategory->parent->isNotEmpty() ? $obCategory->parent : '';
+
+    $this->Breadcrumbs->set($obProduct, $obCategory, $obMainCategory);
+    $this['arBreadcrumbs'] = $this->Breadcrumbs->get();
+    $this['obProduct'] = $obProduct;
+    $this['obOffer'] = $obOffer;
+}
+==
+<!-- Product -->
+<div class="product-page">
+    <!-- Gallery + details-->
+    <div class="container product">
+        {% partial 'breadcrumbs/breadcrumbs' arBreadcrumbs=Breadcrumbs.get() %}
+        <h3 class="product-title">{{ obProduct.name }}</h3>
+    </div>
+</div>
+

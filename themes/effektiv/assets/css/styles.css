@@ -10,7 +10,7 @@ a.active { color: #CC1F4A!important; }
 .breadcrumb a { color: #CD1F4B; font-size: 14px; }
 .breadcrumb .active { font-size: 14px; }
 .product-page { padding: 40px 0 }
-h3.product-title { margin-top: 40px; }
+h3.product-title { margin-top: 40px; font-weight: 300; text-transform: inherit; font-size: 25px; }
 .product-page > .info { background: #F5F5F5; padding: 10px; }
 .product-page .info ul { list-style-type: none; padding: 0; margin: 0;}
 .product-page .info ul li { padding: 10px; font-size: 13px; }
