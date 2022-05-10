@@ -4,8 +4,6 @@ layout = "default"
 is_hidden = 0
 ==
 function onInit() {
-    $obCartPositionList = $this->Cart->get();
-    $this['obCartPositionList'] = $obCartPositionList;
     $this->addJs('assets/js/cart.js');
 }
 ==
@@ -14,13 +12,9 @@ function onInit() {
     <div class="container">
         <div class="row">
             <div class="col-12">
-                {% if obCartPositionList.isNotEmpty() %}
-                    <div class="cart-table-wrapper">
-                        {% partial 'cart/cart-table'  %}
-                    </div>
-                {% else %}
-                    {{ 'Корзина пуста'|_ }}
-                {% endif %}
+                <div class="cart-table-wrapper">
+                    {% partial 'cart/cart-table'  %}
+                </div>
             </div>
         </div>
     </div>

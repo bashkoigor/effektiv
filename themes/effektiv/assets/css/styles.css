@@ -493,6 +493,8 @@ footer .list-inline-item a svg { width: 30px; }
 .cart-page .result { width: 50%; margin: 0 auto; }
 .cart-page .order-btn { color: white; background: #CD1F4B; display: block; margin: 0 auto; }
 .cart-page .order-btn:hover { background: #e6003d; }
+.main-btn { color: white; background: #CD1F4B; display: table; margin: 0 auto; }
+.main-btn:hover { background: #e6003d; color: white; }
 #cart-sync:hover { color: #cd1f4b; }
 #cart-sync {
     font-size: 20px;
