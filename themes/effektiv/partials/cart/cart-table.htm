@@ -1,0 +1,93 @@
+{% set obCartPositionList = Cart.get() %}
+<div class="table-responsive">
+    <form action="">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col">{{ 'Товар'|_ }}</th>
+                <th scope="col">{{ 'Цена'|_ }}</th>
+                <th scope="col">{{ 'Количество'|_ }}</th>
+                <th scope="col">{{ 'Подытог'|_ }}</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            {% for obCartPosition in obCartPositionList %}
+
+                {% set obOffer = obCartPosition.item %}
+                {% set obProduct = obOffer.product %}
+
+                <tr class="_shopaholic-product-wrapper" data-position-id="{{ obCartPosition.id }}">
+                    <th scope="row">
+                        <div class="cart-del _shopaholic-cart-remove">
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
+                    </th>
+                    <td>
+                        <img src="{{ obProduct.preview_image.path }}" alt="{{ obProduct.preview_image.description }}" title="{{ obProduct.preview_image.title }}" itemprop="image">
+                    </td>
+                    <td>
+                        <a href="{{ obProduct.getPageUrl('product') }}">{{ obProduct.name }}</a>
+                    </td>
+                    <td>{{ obOffer.currency }} {{ obOffer.price }}</td>
+                    <td>
+                        <input type="text" name="quantity" class="form-control _shopaholic-cart-quantity" value="{{ obCartPosition.quantity }}">
+                    </td>
+                    <td>
+                        <span>{{ obOffer.currency }} </span>
+                        <span class="_shopaholic-cart" data-group="position" data-field="price_without_tax">
+                            {{ obCartPosition.price_without_tax }}
+                        </span>
+                    </td>
+                </tr>
+
+            {% endfor %}
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="6">
+                    <a href="javascript:window.location.reload()" id="cart-sync">
+                        <i class="fa-solid fa-sync"></i>
+                    </a>
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+        <div class="result">
+            <h4 class="mb-4">Сумма заказов</h4>
+            <table class="table table-bordered">
+                <tbody>
+                <tr>
+                    <th>Подытог</th>
+                    <td>
+                        {{ obOffer.currency }}
+                        <span class="_shopaholic-cart" data-group="position_total_price" data-field="price_without_tax">
+                            {{ obCartPositionList.getTotalPrice() }}
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Доставка</th>
+                    <td>Самовывоз</td>
+                </tr>
+                <tr>
+                    <th>Итого</th>
+                    <td>
+                        <strong>
+                            {{ obOffer.currency }}
+                            <span class="_shopaholic-cart" data-group="position_total_price" data-field="price_without_tax">
+                                {{ obCartPositionList.getTotalPrice() }}
+                            </span>
+                        </strong>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <button type="submit" class="btn order-btn my-4">Оформить заказ</button>
+        </div>
+    </form>
+</div>
+
+

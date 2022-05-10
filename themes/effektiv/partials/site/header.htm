@@ -15,11 +15,14 @@
         </div>
         <div class="col-xl-4">
             <div class="w-25 text-right">
-            <!--{% component 'localePicker' %}-->
+                {% component 'localePicker' %}
+                <div class="header-cart-wrapper">
+                    {% partial 'cart/header-cart-info' %}
+                </div>
             </div>
-            {% for code, name in localePicker.locales %}
-                <a rel="alternate {{ activeLocale }}" href="{{ url(code) }}">{{ code }}</a>
-            {% endfor %}
+<!--            {% for code, name in localePicker.locales %}-->
+<!--                <a rel="alternate {{ activeLocale }}" href="{{ url(code) }}">{{ code }}</a>-->
+<!--            {% endfor %}-->
         </div>
     </div>
 </div>

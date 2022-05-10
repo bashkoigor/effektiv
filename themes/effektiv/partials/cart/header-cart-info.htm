@@ -1,0 +1,5 @@
+{% set obCartPositionList = Cart.get() %}
+<a {% if obCartPositionList.count() > 0 %} href="{{ 'cart'|page }}" {% endif %} >
+    <span>{{ obCartPositionList.count() }} </span>
+    <span>{{ obCartPositionList.getTotalPrice() }} {{ obCartPositionList.getCurrency() }}</span>
+</a>
