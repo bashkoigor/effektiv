@@ -1,0 +1,61 @@
+title = "Оформление заказа"
+url = "/checkout"
+layout = "default"
+is_hidden = 0
+
+[MakeOrder]
+mode = "ajax"
+redirect_on = 1
+redirect_page = "success"
+==
+function onInit() {
+    $this->addJs('assets/js/checkout.js');
+}
+==
+<!-- Сheckout page -->
+<div class="checkout-page my-5">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h3>{{ 'Оформление заказа'|_ }}</h3>
+                <form class="row g-3 needs-validation _shopaholic-order-form" id="checkout_submit" method="post" novalidate>
+                    <div class="col-md-6">
+                        <label for="validationCustom01" class="form-label">{{ 'Имя'|_ }}</label>
+                        <input type="text" class="form-control _shopaholic-order-field" id="validationCustom01" name="first_name" data-group="user" data-field="name" required>
+                        <div class="invalid-feedback">
+                            {{ 'Обязательно для заполнения'|_ }}
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="validationCustom02" class="form-label">{{ 'Фамилия'|_ }}</label>
+                        <input type="text" class="form-control _shopaholic-order-field" id="validationCustom02" name="last_name" data-group="user">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="validationCustom03" class="form-label">{{ 'Email'|_ }}</label>
+                        <input type="text" class="form-control _shopaholic-order-field" id="validationCustom03" name="email" data-group="user">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="validationCustom04" class="form-label">{{ 'Телефон'|_ }}</label>
+                        <input type="text" class="form-control _shopaholic-order-field" id="validationCustom04" name="phone" data-group="user" required>
+                        <div class="invalid-feedback">
+                            {{ 'Обязательно для заполнения'|_ }}
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="validationCustom05" class="form-label">{{ 'Адрес'|_ }}</label>
+                        <input type="text" class="form-control _shopaholic-order-field" id="validationCustom05" name="address" data-group="shipping_address" data-field="address1">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="validationCustom06" class="form-label">{{ 'Примечание к заказу'|_ }}</label>
+                        <textarea class="form-control _shopaholic-order-field" id="validationCustom06" name="comment" data-group="order.property"></textarea>
+                    </div>
+                    <input type="hidden" class="form-control _shopaholic-order-field" name="shipping_type_id" value="1" data-group="order">
+                    <input type="hidden" class="form-control _shopaholic-order-field" name="payment_method_id" value="1" data-group="order">
+                    <div class="col-12">
+                        <button class="btn btn-primary checkout_submit" type="submit">{{ 'Подтвердить заказ'|_ }}</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

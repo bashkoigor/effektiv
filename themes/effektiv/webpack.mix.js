@@ -22,4 +22,5 @@ mix.webpackConfig(webpackConfig)
     .js('resource/js/app.js', 'assets/js/app.js')
     .js('resource/js/product.js', 'assets/js/product.js')
     .js('resource/js/cart.js', 'assets/js/cart.js')
+    .js('resource/js/checkout.js', 'assets/js/checkout.js')
 ;

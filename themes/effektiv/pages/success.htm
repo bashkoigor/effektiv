@@ -1,0 +1,23 @@
+title = "Заказа оформлен"
+url = "/success/:slug"
+layout = "default"
+
+[OrderPage]
+slug = "{{ :slug }}"
+==
+
+{# Get order object #}
+{% set obOrder = OrderPage.get() %}
+<!-- Success page -->
+<div class="success-page my-5">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h3>{{ 'Заказа создан'|_ }}</h3>
+                <div data-id="{{ obOrder.id }}">
+                    <p>{{ 'Номер заказа'|_ }}: <b>{{ obOrder.order_number }}</b></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
