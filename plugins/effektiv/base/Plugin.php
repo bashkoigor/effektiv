@@ -42,8 +42,8 @@ class Plugin extends PluginBase
      */
     protected function addEventListener()
     {
-        // Custom tab with fields in product backend panel
-        // Event::subscribe(ExtendProductFieldsHandler::class);
-        // Event::subscribe(ExtendProductModel::class);
+        // Custom fields in product backend panel
+        Event::subscribe(ExtendProductFieldsHandler::class);
+        Event::subscribe(ExtendProductModel::class);
     }
 }

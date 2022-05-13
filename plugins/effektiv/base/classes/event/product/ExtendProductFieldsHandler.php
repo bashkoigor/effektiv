@@ -19,21 +19,33 @@ class ExtendProductFieldsHandler extends AbstractBackendFieldHandler
     protected function extendFields($obWidget)
     {
         $arAdditionFields = [
-            'partial_product_info' => [
-                'label'     => 'Информация',
-                'tab'       => 'Блоки',
-                'type'    => 'textarea',
-                'size'    => 'small',
-                'span' => 'left',
-                'comment' => '',
+            'carousel' => [
+                'label'     => 'Блок фотокарусель',
+                'tab'       => 'lovata.toolbox::lang.tab.images',
+                'type'      => 'fileupload',
+                'mode'      => 'image',
+                'size'      => 'small',
+                'span'      => 'left',
+                'comment'   => '',
             ],
-            'partial_product_property' => [
-                'label'   => 'Свойства',
-                'tab'     => 'Блоки',
-                'type'    => 'textarea',
-                'span' => 'right',
-                'size'    => 'small',
+            'carousel_in_color' => [
+                'label'     => 'Блок фотокарусель (разные цвета)',
+                'tab'       => 'lovata.toolbox::lang.tab.images',
+                'type'      => 'fileupload',
+                'mode'      => 'image',
+                'size'      => 'small',
+                'span'      => 'left',
+                'comment'   => '',
             ],
+            'description_block' => [
+                'label'     => 'Блок описаня товара',
+                'tab'       => 'lovata.toolbox::lang.tab.images',
+                'type'      => 'fileupload',
+                'mode'      => 'image',
+                'size'      => 'small',
+                'span'      => 'left',
+                'fileTypes'   => 'svg,jpg,png',
+            ]
         ];
 
         $obWidget->addTabFields($arAdditionFields);

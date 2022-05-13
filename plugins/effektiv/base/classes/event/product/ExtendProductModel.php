@@ -13,18 +13,12 @@ class ExtendProductModel
     {
         Product::extend(function ($obProduct) {
 
-            $arNewFieldList = [
-                'partial_product_info',
-                'partial_product_property',
-            ];
-
             /** @var Product $obProduct */
-            foreach ($arNewFieldList as $sFieldName) {
-                $obProduct->fillable[] = $sFieldName;
-                $obProduct->translatable[] = $sFieldName; // Для перевда
-            }
+            $obProduct->attachMany['carousel'] = 'System\Models\File';
+            $obProduct->attachMany['carousel_in_color'] = 'System\Models\File';
+            $obProduct->attachMany['description_block'] = 'System\Models\File';
 
-            $obProduct->addCachedField($arNewFieldList);
+            $obProduct->addCachedField(['carousel','carousel_in_color','description_block']);
         });
     }
 }
