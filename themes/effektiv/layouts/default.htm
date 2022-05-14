@@ -7,6 +7,20 @@ forceUrl = 1
 
 [Cart]
 ==
+function onInit() {
+
+    $arCurrency = [
+        "ru" => "RUB",
+        "en" => "USD",
+        "es" => "EUR",
+    ];
+
+    $currentLocale = \RainLab\Translate\Classes\Translator::instance()->getLocale();
+    \Lovata\Shopaholic\Classes\Helper\PriceTypeHelper::instance()->switchActive($arCurrency[$currentLocale]);
+    \Lovata\Shopaholic\Classes\Helper\CurrencyHelper::instance()->switchActive($arCurrency[$currentLocale]);
+    
+}
+==
 <!doctype html>
 <html lang="en">
     <head>
