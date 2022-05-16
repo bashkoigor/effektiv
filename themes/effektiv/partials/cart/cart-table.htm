@@ -21,9 +21,9 @@
                 {% set obOffer = obCartPosition.item %}
                 {% set obProduct = obOffer.product %}
 
-                <tr class="_shopaholic-product-wrapper" data-position-id="{{ obCartPosition.id }}">
+                <tr class="product-wrapper" data-position-id="{{ obCartPosition.id }}">
                     <th scope="row">
-                        <div class="cart-del _shopaholic-cart-remove">
+                        <div class="cart-del cart-remove">
                             <i class="fa-solid fa-xmark"></i>
                         </div>
                     </th>
@@ -35,11 +35,12 @@
                     </td>
                     <td>{{ obOffer.currency }} {{ obOffer.price }}</td>
                     <td>
-                        <input type="text" name="quantity" class="form-control _shopaholic-cart-quantity" value="{{ obCartPosition.quantity }}">
+                        <input type="hidden" name="offer_id" value="{{ obOffer.id }}">
+                        <input type="text" name="quantity" class="form-control cart-quantity" value="{{ obCartPosition.quantity }}">
                     </td>
                     <td>
                         <span>{{ obOffer.currency }} </span>
-                        <span class="_shopaholic-cart" data-group="position" data-field="price_without_tax">
+                        <span data-group="position" data-field="price_without_tax">
                             {{ obCartPosition.price_without_tax }}
                         </span>
                     </td>
@@ -65,8 +66,8 @@
                     <th>Итого</th>
                     <td>
                         <strong>
-                            {{ obOffer.currency }}
-                            <span class="_shopaholic-cart" data-group="position_total_price" data-field="price_without_tax">
+                            {{ obCartPositionList.getCurrency() }}
+                            <span data-group="position_total_price" data-field="price_without_tax">
                                 {{ obCartPositionList.getTotalPrice() }}
                             </span>
                         </strong>

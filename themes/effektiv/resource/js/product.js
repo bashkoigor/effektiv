@@ -1,3 +1,7 @@
+$.request('onAjax', {
+    //update: { 'product/product-list': '.product-list' }
+});
+
 // Event add product to cart
 $(document).on('click', '.btn-quick-order, .btn-add-to-cart', (e) => {
 

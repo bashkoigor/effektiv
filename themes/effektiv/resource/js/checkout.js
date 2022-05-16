@@ -1,7 +1,3 @@
-//import ShopaholicOrder from '@lovata/shopaholic-cart/shopaholic-order';
-
-//const obShopaholicOrder = new ShopaholicOrder();
-
 // Create order
 function createkOrder(userFields) {
 
