@@ -9,6 +9,13 @@ slug_required = 1
 smart_url_check = 1
 skip_error = 0
 
+[MakeOrder]
+mode = "ajax"
+redirect_on = 1
+redirect_page = "success"
+
+[ProductList]
+
 [Breadcrumbs]
 ==
 function onInit() {
@@ -20,11 +27,12 @@ function onInit() {
 
     $obCategory     = $obProduct->category;
     $obMainCategory = $obCategory->parent->isNotEmpty() ? $obCategory->parent : '';
-
     $this->Breadcrumbs->set($obProduct, $obCategory, $obMainCategory);
+
     $this['arBreadcrumbs'] = $this->Breadcrumbs->get();
     $this['obProduct'] = $obProduct;
     $this['obOffer'] = $obOffer;
+    $this['obProductList'] = $this->ProductList->make()->category($obCategory->id)->take(6);
 
     $this->addJs('assets/js/product.js');
 }
@@ -32,11 +40,11 @@ function onInit() {
 <!-- Product -->
 <div class="product-page">
     <!-- Gallery + details-->
-    <div class="container product _shopaholic-product-wrapper" data-product-id="{{ obProduct.id }}">
+    <div class="container product product-wrapper" data-product-id="{{ obProduct.id }}">
         <input type="hidden" name="offer_id" value="{{ obOffer.id }}">
         <input type="hidden" name="quantity" value="1">
-        {% partial 'breadcrumbs/breadcrumbs' arBreadcrumbs=Breadcrumbs.get() %}
-        <h3 class="product-title">{{ obProduct.name }}</h3>
+        {% partial 'breadcrumbs/breadcrumbs' %}
+        <h3 class="product-title">{{ obProduct.name }} {{locale}}</h3>
         <div class="row">
             <!-- Product gallery-->
             <div class="col-lg-8">
@@ -68,59 +76,15 @@ function onInit() {
                         <div class="col-lg-12">
                             <div class="price mb-4">{{ obOffer.currency }} {{ obOffer.price }}</div>
                             <div class="order-btn mb-4">
-                                <button type="button" class="btn btn-quick-order">Быстрый заказ</button>
-                                <button type="button" class="btn btn-add-cart _shopaholic-cart-add">
-                                    <i class="fas fa-shopping-cart"></i> В корзину
+                                <button type="button" class="btn btn-quick-order">
+                                    {{ 'Быстрый заказ'|_ }}
+                                </button>
+                                <button type="button" class="btn btn-add-to-cart">
+                                    <i class="fas fa-shopping-cart"></i> {{ 'В корзину'|_ }}
                                 </button>
                             </div>
-                            <div class="info">
-                                <ul>
-                                    <li>
-                                        <img src="https://effektiv.shop/wp-content/uploads/2020/10/Certification-red.svg" title="сертификация" alt="сертификация">
-                                        Сертификация
-                                        <img src="https://effektiv.shop/wp-content/uploads/2020/10/CE.svg" title="CE" alt="CE">
-                                        <img src="https://effektiv.shop/wp-content/uploads/2020/10/RoHS.svg" title="RoHS" alt="RoHS">
-                                        <img src="https://effektiv.shop/wp-content/uploads/2020/10/EAC.svg" title="EAC" alt="EAC">
-                                    </li>
-                                    <li>
-                                        <img src="https://effektiv.shop/wp-content/uploads/2020/10/Warranty-red.svg" title="гарантия" alt="гарантия">
-                                        Гарантия: 36 месяцев
-                                    </li>
-                                    <li>
-                                        <img src="https://effektiv.shop/wp-content/uploads/2020/10/Instruction-red.svg" title="инструкция" alt="инструкция">
-                                        Инструкция:
-                                        <a href="https://effektiv.shop/wp-content/uploads/2021/06/TRIUMPHATOR-1700_1800-Multilang.pdf" target="_blank">Скачать</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="property my-4">
-                                <ul>
-                                    <li>
-                                        <img src="https://effektiv.shop/wp-content/uploads/2020/12/EMB-benefits_2.svg" title="" alt="">
-                                        Скорость шитья 1200 ст/мин
-                                    </li>
-                                    <li>
-                                        <img src="https://effektiv.shop/wp-content/uploads/2020/07/diferencial.svg" title="diferencial" alt="diferencial">
-                                        Наличие дифференциальной подачи ткани
-                                    </li>
-                                    <li>
-                                        <img src="https://effektiv.shop/wp-content/uploads/2020/07/all-types-of-fabrics.svg" title="all types of fabrics" alt="all types of fabrics">
-                                        Работа со всеми типами тканей
-                                    </li>
-                                    <li>
-                                        <img src="https://effektiv.shop/wp-content/uploads/2020/07/role-sew.svg" title="role sew" alt="role sew">
-                                        Наличие ролевого шва
-                                    </li>
-                                    <li>
-                                        <img src="https://effektiv.shop/wp-content/uploads/2020/07/2-3-4-sew.svg" title="2-3-4 sew" alt="2-3-4 sew">
-                                        3/4 ниточный шов
-                                    </li>
-                                    <li>
-                                        <img src="https://effektiv.shop/wp-content/uploads/2020/07/Automatic.svg" title="Automatic" alt="Automatic">
-                                        Автоматическая заправка петлителей
-                                    </li>
-                                </ul>
-                            </div>
+                            {% partial 'product/information' %}
+                            {% partial 'product/properties' %}
                         </div>
                     </div>
                     <div class="row">
@@ -141,7 +105,53 @@ function onInit() {
                     </div>
                 </div>
             </div>
+            <!-- Product info tabs -->
+            <div class="col-lg-12">
+                <div class="info-tab">
+                    {% partial 'product/info-tabs' %}
+                </div>
+            </div>
         </div>
+    </div>
+    <!-- Benefit block -->
+    <div class="container-fluid benefit">
+        {% partial 'product/benefit' %}
+    </div>
+    <!-- Banner block -->
+    <div class="container-fluid banner">
+        {% partial 'product/banner' %}
+    </div>
+    <!-- Detail block -->
+    <div class="container-fluid detail" id="detail">
+        {% partial 'product/detail' %}
+    </div>
+    <!-- Carousel block -->
+    <div class="container-fluid carousel">
+        {% partial 'product/carousel' %}
+    </div>
+    <!-- Benefits block -->
+    <div class="container-fluid benefits">
+        {% partial 'product/benefits' %}
+    </div>
+    <!-- Other blocks -->
+    <div class="container in-color">
+        <div class="row">
+            {% partial 'product/carousel-in-color' %}
+            {% partial 'product/video-block' %}
+        </div>
+        {% partial 'product/description-block' %}
+    </div>
+    <!-- Property table -->
+    <div class="container property-table">
+        {% partial 'product/specifications' %}
+    </div>
+    <!-- Product list block -->
+    <div class="container product-list">
+        {% partial 'product/product-list' %}
+    </div>
+    <!-- Contact form -->
+    <div class="container contact-form">
+        {% partial 'product/contact-form' %}
     </div>
 </div>
 
