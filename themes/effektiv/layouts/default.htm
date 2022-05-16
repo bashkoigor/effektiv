@@ -18,7 +18,7 @@ function onInit() {
     $currentLocale = \RainLab\Translate\Classes\Translator::instance()->getLocale();
     \Lovata\Shopaholic\Classes\Helper\PriceTypeHelper::instance()->switchActive($arCurrency[$currentLocale]);
     \Lovata\Shopaholic\Classes\Helper\CurrencyHelper::instance()->switchActive($arCurrency[$currentLocale]);
-    
+
 }
 ==
 <!doctype html>
@@ -54,9 +54,13 @@ function onInit() {
         <!-- Modal menu -->
         <div class="modal-menu-wrap"></div>
 
-        <!-- Scripts -->
-        {% scripts %}
-        {% partial 'site/script' %}
+        <!-- Modal quick order -->
+        <div class="modal-quick-order">
+            {% partial 'site/modal-quick-order' %}
+        </div>
 
+        <!-- Scripts -->
+        {% partial 'site/script' %}
+        {% scripts %}
     </body>
 </html>
