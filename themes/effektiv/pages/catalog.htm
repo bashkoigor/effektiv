@@ -37,4 +37,7 @@ function onInit() {
     $this['obProductList'] = $obProductList;
 }
 ==
+{% put pageTitle %}
+    {{ obCategory.name }}
+{% endput %}
 {% partial 'catalog/product-list' %}

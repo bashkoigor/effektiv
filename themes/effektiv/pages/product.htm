@@ -37,6 +37,9 @@ function onInit() {
     $this->addJs('assets/js/product.js');
 }
 ==
+{% put pageTitle %}
+    {{ obProduct.name }}
+{% endput %}
 <!-- Product -->
 <div class="product-page">
     <!-- Gallery + details-->
