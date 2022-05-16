@@ -1,0 +1,32 @@
+<div class="modal fade" id="quickOrder" tabindex="-1" aria-labelledby="quickOrderLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="quickOrderLabel">
+                    {{ 'Быстрый заказ'|_ }}
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="quick-order-needs-validation" novalidate>
+                    <div class="mb-3">
+                        <label for="recipient-country" class="col-form-label">{{ 'Имя'|_ }}</label>
+                        <input type="text" class="form-control" name="first_name" id="validationQuickOrderName" required>
+                        <div class="invalid-feedback">
+                            {{ 'Обязательно для заполнения'|_ }}
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="recipient-city" class="col-form-label">{{ 'Телефон'|_ }}</label>
+                        <input type="text" class="form-control" name="phone" id="validationQuickOrderPhone" required>
+                        <div class="invalid-feedback">
+                            {{ 'Обязательно для заполнения'|_ }}
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-4">{{ 'Отправить'|_ }}</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
