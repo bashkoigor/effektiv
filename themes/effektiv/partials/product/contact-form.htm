@@ -1,0 +1,34 @@
+<div class="row">
+    <div class="col-sm-12 text-center mb-5">
+        <h2>{{ 'Обратная связь'|_ }}</h2>
+        <p>{{ 'Если у Вас остались вопросы или Вы хотите поделиться своим мнением – пожалуйста, пишите, мы обязательно ответим!'|_ }}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-5">
+        <img src="/storage/app/media/contact_form_logo.png" alt="">
+        <p>{{ 'Для более подробной информации о продукте и компании, пожалуйста посетите наш официальный веб-сайт'|_ }}</p>
+        <p>https://effekt-iv.ru</p>
+    </div>
+    <div class="col-sm-7">
+        <form>
+            <div class="mb-3">
+                <label for="name" class="form-label">{{ 'Ваше Имя'|_ }}</label>
+                <input type="text" class="form-control" id="name">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">{{ 'Ваш Email'|_ }}</label>
+                <input type="email" class="form-control" id="email">
+            </div>
+            <div class="mb-3">
+                <label for="phone" class="form-label">{{ 'Телефон'|_ }}</label>
+                <input type="phone" class="form-control" id="phone">
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">{{ 'Сообщение'|_ }}</label>
+                <textarea class="form-control" id="message" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-send-form">{{ 'Отправить'|_ }}</button>
+        </form>
+    </div>
+</div>

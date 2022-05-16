@@ -1,0 +1,30 @@
+{{ obProduct.property.getByCode('product-list').property_value.getValueString()|raw }}
+{% for obSubProductList in obProductList|batch(3) %}
+    <div class="row">
+        <div class="col-sm-12 mt-5">
+            <h3></h3>
+        </div>
+    </div>
+    <div class="row">
+    {% for obProduct in obSubProductList %}
+        {% set obOffer = obProduct.offer.first() %}
+        <div class="col-sm-4">
+            <div class="item product-wrapper" data-product-id="{{ obProduct.id }}">
+                <input type="hidden" name="offer_id" value="{{ obOffer.id }}">
+                <input type="hidden" name="quantity" value="1">
+                <img src="{{ obProduct.preview_image.getPath() }}" alt="{{ obProduct.preview_image.description }}" title="{{ obProduct.preview_image.title }}" />
+                <a href="{{ obProduct.getPageUrl('product') }}">{{obProduct.name}}</a>
+                {{obProduct.description|raw}}
+                <div class="order-btn mb-4">
+                    <button type="button" class="btn btn-quick-order">{{ 'Быстрый заказ'|_ }}</button>
+                    <button type="button" class="btn btn-add-to-cart">
+                        <i class="fas fa-shopping-cart" aria-hidden="true"></i> {{ 'В корзину'|_ }}
+                    </button>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+{% endfor %}
+
+

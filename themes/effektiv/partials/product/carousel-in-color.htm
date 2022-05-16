@@ -1,0 +1,16 @@
+<div class="col-sm-12">
+    <h2>{{ 'цвета на выбор'|_ }}</h2>
+    <p>{{ 'Оверлок представлен в трех цветовых вариациях. Выберите свой любимый цвет'|_ }}</p>
+    <div id="in-color-carousel" class="carousel mt-5">
+        {% if obProduct.carousel_in_color is not empty %}
+            {% for obImage in obProduct.carousel_in_color %}
+            <div class="carousel__slide">
+                <a href="{{ obImage.getPath() }}" data-fancybox="color-carousel">
+                    <img src="{{ obImage.getPath() }}" alt="{{ obImage.description }}" title="{{ obImage.title }}" />
+                </a>
+                <p>{{ obImage.title }}</p>
+            </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+</div>
