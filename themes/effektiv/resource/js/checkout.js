@@ -1,6 +1,23 @@
-import ShopaholicOrder from '@lovata/shopaholic-cart/shopaholic-order';
+//import ShopaholicOrder from '@lovata/shopaholic-cart/shopaholic-order';
 
-const obShopaholicOrder = new ShopaholicOrder();
+//const obShopaholicOrder = new ShopaholicOrder();
+
+// Create order
+function createkOrder(userFields) {
+
+    let data = {
+        'order': {
+            'payment_method_id': 1,
+            'shipping_type_id': 1
+        },
+        'user': userFields
+    };
+
+    $.request('MakeOrder::onCreate', {
+        'data': data
+    });
+    
+}
 
 (function () {
     'use strict'
@@ -16,7 +33,16 @@ const obShopaholicOrder = new ShopaholicOrder();
                     event.preventDefault()
                     event.stopPropagation()
                 } else {
-                    obShopaholicOrder.create(); // Create order
+                    event.preventDefault()
+                    const userFields = {
+                        'name': form.querySelector('[name="first_name"]').value,
+                        'last_name': form.querySelector('[name="last_name"]').value,
+                        'shipping_address1': form.querySelector('[name="address"]').value,
+                        'comment': form.querySelector('[name="comment"]').value,
+                        'phone': form.querySelector('[name="phone"]').value,
+                        'email': form.querySelector('[name="email"]').value
+                    };
+                    createkOrder(userFields); // Create order
                 }
 
                 form.classList.add('was-validated')

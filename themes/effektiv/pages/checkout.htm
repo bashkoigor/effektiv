@@ -18,7 +18,7 @@ function onInit() {
         <div class="row">
             <div class="col">
                 <h3>{{ 'Оформление заказа'|_ }}</h3>
-                <form class="row g-3 needs-validation _shopaholic-order-form" id="checkout_submit" method="post" novalidate>
+                <form class="row g-3 needs-validation" id="checkout_submit" method="post" novalidate>
                     <div class="col-md-6">
                         <label for="validationCustom01" class="form-label">{{ 'Имя'|_ }}</label>
                         <input type="text" class="form-control _shopaholic-order-field" id="validationCustom01" name="first_name" data-group="user" data-field="name" required>
@@ -31,15 +31,15 @@ function onInit() {
                         <input type="text" class="form-control _shopaholic-order-field" id="validationCustom02" name="last_name" data-group="user">
                     </div>
                     <div class="col-md-6">
-                        <label for="validationCustom03" class="form-label">{{ 'Email'|_ }}</label>
-                        <input type="text" class="form-control _shopaholic-order-field" id="validationCustom03" name="email" data-group="user">
-                    </div>
-                    <div class="col-md-6">
                         <label for="validationCustom04" class="form-label">{{ 'Телефон'|_ }}</label>
                         <input type="text" class="form-control _shopaholic-order-field" id="validationCustom04" name="phone" data-group="user" required>
                         <div class="invalid-feedback">
                             {{ 'Обязательно для заполнения'|_ }}
                         </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="validationCustom03" class="form-label">{{ 'Email'|_ }}</label>
+                        <input type="text" class="form-control _shopaholic-order-field" id="validationCustom03" name="email" data-group="user">
                     </div>
                     <div class="col-md-6">
                         <label for="validationCustom05" class="form-label">{{ 'Адрес'|_ }}</label>
