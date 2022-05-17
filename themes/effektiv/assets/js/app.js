@@ -32,3 +32,4 @@ $(document).on('click', '#btn-call-back', (e) => {
     $('#callBackForm').modal('show');
 
 });
+
