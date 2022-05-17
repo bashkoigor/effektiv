@@ -334,7 +334,7 @@ header { background: #1E252B; padding: 20px 0; }
 .categories .icon-filter:before { content: '\f0b0'; } /* 'ï‚°' */
 
 .main-page .categories a:hover{ border-bottom: 3px solid #CC1F4A; }
-.main-page .categories a { color: black; padding-bottom: 6px; }
+.main-page .categories a { color: black; padding-bottom: 6px; line-height: 2; }
 .categories .icon { font-size: 98px; }
 .categories .divider { border-bottom: 1px solid; width: 50%; margin: 0 auto;}
 .categories .color-1 { color: #d00c4a; }

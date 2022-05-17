@@ -1,0 +1,19 @@
+{% set obCategoryList = CategoryList.make().tree() %}
+{% if obCategoryList.isNotEmpty() %}
+<div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4">
+    {% for obParentCategory in obCategoryList %}
+    <div class="col">
+        <ul class="item">
+            <li>
+                <i aria-hidden="true" class="icon icon-{{ obParentCategory.id }} color-{{ obParentCategory.id }}"></i>
+            </li>
+            <li>
+                <h2 class="title">
+                    <a href="{{ obParentCategory.getPageUrl('catalog') }}">{{ obParentCategory.name }}</a>
+                </h2>
+            </li>
+        </ul>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
