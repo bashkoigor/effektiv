@@ -374,7 +374,19 @@ footer .list-inline-item a svg { width: 30px; }
     bottom: 20px;
     display: none;
 }
-
+#btn-call-back {
+    color: #cd1f4b;
+    font-size: 46px;
+    cursor: pointer;
+    position: absolute;
+    width: 40px;
+    height: auto;
+    top: -14px;
+    right: 110px;
+}
+.header-block-wrapper {
+    position: relative;
+}
 #blocks-carousel img { width: 100%; }
 #blocks-carousel .text h1, h5 { margin-bottom: 20px; }
 #blocks-carousel .text {
@@ -576,6 +588,7 @@ footer .list-inline-item a svg { width: 30px; }
     #blocks-carousel .carousel-item { height: auto; }
 }
 @media (max-width: 576px) {
+    #btn-call-back { right: 60px; }
     .locale-picker { width: 46px; }
     .breadcrumb a { font-size: 10px; }
     .breadcrumb .active { font-size: 10px; }
