@@ -20,11 +20,11 @@ redirect_page = "success"
 ==
 function onInit() {
     $obProduct = $this->ProductPage->get();
-    $obOffer = $obProduct->offer->first();
     if (!empty($this->param('slug')) && empty($obProduct)) {
         return $this->ProductPage->getErrorResponse();
     }
 
+    $obOffer        = $obProduct->offer->first();
     $obCategory     = $obProduct->category;
     $obMainCategory = $obCategory->parent->isNotEmpty() ? $obCategory->parent : '';
     $this->Breadcrumbs->set($obProduct, $obCategory, $obMainCategory);

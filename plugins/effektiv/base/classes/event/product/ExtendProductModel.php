@@ -14,7 +14,7 @@ class ExtendProductModel
         Product::extend(function ($obProduct) {
 
             /** @var Product $obProduct */
-            $obProduct->attachMany['carousel'] = 'System\Models\File';
+            $obProduct->attachMany['benefits_images'] = 'System\Models\File';
             $obProduct->attachMany['carousel_in_color'] = 'System\Models\File';
             $obProduct->attachMany['description_block'] = 'System\Models\File';
 

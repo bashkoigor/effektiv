@@ -19,14 +19,14 @@ class ExtendProductFieldsHandler extends AbstractBackendFieldHandler
     protected function extendFields($obWidget)
     {
         $arAdditionFields = [
-            'carousel' => [
-                'label'     => 'Блок фотокарусель',
+            'benefits_images' => [
+                'label'     => 'Ключевые преимущества',
                 'tab'       => 'lovata.toolbox::lang.tab.images',
                 'type'      => 'fileupload',
                 'mode'      => 'image',
                 'size'      => 'small',
                 'span'      => 'left',
-                'comment'   => '',
+                'fileTypes'   => 'svg,jpg,png',
             ],
             'carousel_in_color' => [
                 'label'     => 'Блок фотокарусель (разные цвета)',
