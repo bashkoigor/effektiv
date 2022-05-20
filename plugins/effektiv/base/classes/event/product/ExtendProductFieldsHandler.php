@@ -6,7 +6,7 @@ use Lovata\Shopaholic\Models\Product;
 use Lovata\Shopaholic\Controllers\Products;
 
 /**
- * Class ExtendOfferFieldsHandler
+ * Class ExtendProductFieldsHandler
  * @package Effektiv\Base\Classes\Event\Product
  * @author  Igor Bashko
  */
@@ -19,24 +19,6 @@ class ExtendProductFieldsHandler extends AbstractBackendFieldHandler
     protected function extendFields($obWidget)
     {
         $arAdditionFields = [
-            'benefits_images' => [
-                'label'     => 'Ключевые преимущества',
-                'tab'       => 'lovata.toolbox::lang.tab.images',
-                'type'      => 'fileupload',
-                'mode'      => 'image',
-                'size'      => 'small',
-                'span'      => 'left',
-                'fileTypes'   => 'svg,jpg,png',
-            ],
-            'carousel_in_color' => [
-                'label'     => 'Блок фотокарусель (разные цвета)',
-                'tab'       => 'lovata.toolbox::lang.tab.images',
-                'type'      => 'fileupload',
-                'mode'      => 'image',
-                'size'      => 'small',
-                'span'      => 'left',
-                'comment'   => '',
-            ],
             'description_block' => [
                 'label'     => 'Блок описаня товара',
                 'tab'       => 'lovata.toolbox::lang.tab.images',
