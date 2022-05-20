@@ -8,6 +8,11 @@ use System\Classes\PluginBase;
 use Effektiv\Base\Classes\Event\Product\ExtendProductFieldsHandler;
 use Effektiv\Base\Classes\Event\Product\ExtendProductModel;
 
+use Effektiv\Base\Classes\Event\Category\ExtendCategoryFieldsHandler;
+use Effektiv\Base\Classes\Event\Category\ExtendCategoryModel;
+
+use Effektiv\Base\Classes\Event\Category\ExtendCategoryController;
+
 class Plugin extends PluginBase
 {
 
@@ -34,7 +39,6 @@ class Plugin extends PluginBase
     public function boot()
     {
         $this->addEventListener();
-
     }
 
     /**
@@ -43,7 +47,10 @@ class Plugin extends PluginBase
     protected function addEventListener()
     {
         // Custom fields in product backend panel
-        Event::subscribe(ExtendProductFieldsHandler::class);
-        Event::subscribe(ExtendProductModel::class);
+        //Event::subscribe(ExtendProductFieldsHandler::class);
+        //Event::subscribe(ExtendProductModel::class);
+
+        // Custom fields in category backend panel
+        Event::subscribe(ExtendCategoryModel::class);
     }
 }
