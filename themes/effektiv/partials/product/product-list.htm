@@ -1,4 +1,4 @@
-{{ obProduct.property.getByCode('product-list').property_value.getValueString()|raw }}
+{{obCategory.product_list_title|raw}}
 {% for obSubProductList in obProductList|batch(3) %}
     <div class="row">
         <div class="col-sm-12 mt-5">
