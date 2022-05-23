@@ -208,6 +208,33 @@ h3.product-title { margin-top: 40px; font-weight: 300; text-transform: inherit; 
     border-radius: 50%;
     position: absolute;
 }
+/* shvejno-vyshivalnye-mashiny */
+.product-page .detail .shvejno-vyshivalnye-mashiny .item1 a.btn1 { left: 50%; bottom: 79%; }
+.product-page .detail .shvejno-vyshivalnye-mashiny .item1 a.btn2 { left: 69%; bottom: 80%; }
+.product-page .detail .shvejno-vyshivalnye-mashiny .item1 a.btn3 { left: 34%; bottom: 61%; }
+.product-page .detail .shvejno-vyshivalnye-mashiny .item1 a.btn4 { left: 79%; bottom: 65%; }
+.product-page .detail .shvejno-vyshivalnye-mashiny .item1 a.btn5 { left: 48%; bottom: 37%; }
+.product-page .detail .shvejno-vyshivalnye-mashiny .item1 a.btn6 { left: 36%; bottom: 30%; }
+.product-page .detail .shvejno-vyshivalnye-mashiny .item1 a.btn7 { left: 56%; bottom: 21%; }
+.product-page .detail .shvejno-vyshivalnye-mashiny .item2 a.btn8 { left: 51%; bottom: 53%; }
+.product-page .detail .shvejno-vyshivalnye-mashiny .item2 a.btn9 { left: 49%; bottom: 44%; }
+.product-page .detail .shvejno-vyshivalnye-mashiny .item2 a.btn10 { left: 80%; bottom: 66%; }
+.product-page .detail .shvejno-vyshivalnye-mashiny .item2 a.btn11 { left: 69%; bottom: 44%; }
+.product-page .detail .shvejno-vyshivalnye-mashiny .item2 a.btn12 { left: 80%; bottom: 32%; }
+.product-page .detail .shvejno-vyshivalnye-mashiny .item2 a.btn13 { left: 80%; bottom: 25%; }
+.product-page .detail .shvejno-vyshivalnye-mashiny .item2 a.btn14 { left: 80%; bottom: 18%; }
+.product-page .detail .shvejno-vyshivalnye-mashiny .item1, .item2 { position: relative; }
+.product-page .detail .shvejno-vyshivalnye-mashiny .item1 a, .item2 a {
+    background-color: #CD1F48;
+    color: #FFFFFF;
+    font-size: 10px;
+    display:block;
+    height: 18px;
+    width: 18px;
+    padding: 2px;
+    border-radius: 50%;
+    position: absolute;
+}
 /* vyshivalnye-mashiny  */
 .product-page .benefits .vyshivalnye-mashiny img.item1 { width: 60%; }
 .product-page .benefits .vyshivalnye-mashiny img.item2 { width: 80%; }
