@@ -1,1 +1,6 @@
-{{obCategory.product_3d_video|raw}}
+{% if obCategory.product_3d_video is not empty %}
+	{{obCategory.product_3d_video|raw}}
+{% else %}
+	{{ obProduct.property.getByCode('product_3d_video').property_value.getValueString()|raw }}
+{% endif %}
+

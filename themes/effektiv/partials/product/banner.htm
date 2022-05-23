@@ -1,1 +1,5 @@
-{{obCategory.product_video_banner|raw}}
+{% if obCategory.product_video_banner is not empty %}
+	{{obCategory.product_video_banner|raw}}
+{% else %}
+	{{ obProduct.property.getByCode('product_video_banner').property_value.getValueString()|raw }}
+{% endif %}
