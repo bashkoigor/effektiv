@@ -1,1 +1,15 @@
+{% if obCategory.id not in arHidePartial %}
 {{obCategory.product_colors|raw}}
+<div class="carousel mt-5" id="in-color-carousel">
+	{% for obProduct in obProductList %}
+	    {% set obOffer = obProduct.offer.first() %}
+	    <div class="carousel__slide">
+	        <a data-fancybox="color-carousel" href="{{ obProduct.preview_image.getPath() }}">
+	        	<img src="{{ obProduct.preview_image.getPath() }}" alt="" title="" class="fr-fic fr-dii">
+	        </a>
+	        <p><a href="{{ obProduct.getPageUrl('product') }}" onclick="event.stopPropagation()">{{obProduct.name}}</a></p>
+	    </div>
+	{% endfor %}
+</div>
+{% endif %}
+

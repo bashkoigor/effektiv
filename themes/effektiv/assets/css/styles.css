@@ -132,7 +132,7 @@ h3.product-title { margin-top: 40px; font-weight: 300; text-transform: inherit; 
 .product-page .in-color .video-block p {  font-size: 18px; margin-bottom: 50px; }
 .product-page .in-color .video-block img { height: 520px; }
 .product-page .in-color img { width: 100%; }
-.product-page .in-color { background: white; text-align: center; padding: 80px 0; }
+.product-page .in-color { background: white; text-align: center;  }
 .product-page .in-color #in-color-carousel p { margin-top: 20px; text-transform: uppercase; font-size: 14px; }
 
 .product-page .product-list, .contact-form { padding-top: 80px; }
@@ -145,6 +145,9 @@ h3.product-title { margin-top: 40px; font-weight: 300; text-transform: inherit; 
 .product-page .product-list .item a { font-size: 20px; margin: 40px 0; color: #212529; text-transform: uppercase; font-weight: 500; display: block; }
 .product-page .product-list .item a:hover { color: grey; }
 .product-page .product-list .item .order-btn { margin: 40px 0; }
+
+.in-color a {color: #212529;}
+.in-color a:hover { color: grey; }
 
 .vertical-center { display: flex; align-items: center; height: 100%; }
 .background-grey { background: #F5F5F5; }
@@ -166,6 +169,7 @@ h3.product-title { margin-top: 40px; font-weight: 300; text-transform: inherit; 
 .product-page .in-color .description h2 { padding: 40px 10px; text-transform: uppercase; }
 .product-page .in-color .description p { text-align: left; font-size: 16px; padding: 0 10px; }
 .product-page .detail, .benefits { background: #F5F5F5; text-align: center; padding: 80px 0; }
+.product-page .benefits { margin-bottom: 80px;}
 .product-page .detail p, .benefits p, .in-color p { font-size: 14px; }
 .product-page .benefits img { width: 90%; }
 .product-page .benefits ul { list-style-type: none; padding: 0; }
@@ -177,6 +181,8 @@ h3.product-title { margin-top: 40px; font-weight: 300; text-transform: inherit; 
 .product-page .benefits ul.right li svg { margin: auto 0 30px 0; }
 
 .product-page .detail img { display: block; margin: 0 auto; width: 100%; }
+
+/* overlok */
 .product-page .detail .left a#btn1 { left: 42%; bottom: 88%; }
 .product-page .detail .left a#btn2 { left: 69%; bottom: 86%; }
 .product-page .detail .left a#btn3 { left: 12%; bottom: 35%; }
@@ -202,6 +208,53 @@ h3.product-title { margin-top: 40px; font-weight: 300; text-transform: inherit; 
     border-radius: 50%;
     position: absolute;
 }
+/* vyshivalnye-mashiny  */
+.product-page .benefits .vyshivalnye-mashiny img.item1 { width: 60%; }
+.product-page .benefits .vyshivalnye-mashiny img.item2 { width: 80%; }
+.product-page .benefits .vyshivalnye-mashiny img.item3 { width: 40%; }
+.product-page .vyshivalnye-mashiny nav { margin: 0 auto; display: inline-block; }
+.product-page .detail .vyshivalnye-mashiny .item1 a#btn1 { left: 48%; bottom: 94%; }
+.product-page .detail .vyshivalnye-mashiny .item1 a#btn2 { left: 47%; bottom: 81%; }
+.product-page .detail .vyshivalnye-mashiny .item1 a#btn3 { left: 37%; bottom: 73%; }
+.product-page .detail .vyshivalnye-mashiny .item1 a#btn4 { left: 52%; bottom: 67%; }
+.product-page .detail .vyshivalnye-mashiny .item1 a#btn5 { left: 75%; bottom: 69%; }
+.product-page .detail .vyshivalnye-mashiny .item1 a#btn6 { left: 48%; bottom: 56%; }
+.product-page .detail .vyshivalnye-mashiny .item1 a#btn7 { left: 30%; bottom: 38%; }
+.product-page .detail .vyshivalnye-mashiny .item1 a#btn8 { left: 48%; bottom: 36%; }
+.product-page .detail .vyshivalnye-mashiny .item1 a#btn9 { left: 48%; bottom: 28%; }
+.product-page .detail .vyshivalnye-mashiny .item1 a#btn10 { left: 37%; bottom: 22%; }
+
+.product-page .detail .vyshivalnye-mashiny .item2 a#btn11 { left: 42%; bottom: 92%; }
+.product-page .detail .vyshivalnye-mashiny .item2 a#btn12 { left: 60%; bottom: 78%; }
+.product-page .detail .vyshivalnye-mashiny .item2 a#btn13 { left: 87%; bottom: 65%; }
+.product-page .detail .vyshivalnye-mashiny .item2 a#btn14 { left: 43%; bottom: 62%; }
+.product-page .detail .vyshivalnye-mashiny .item2 a#btn15 { left: 18%; bottom: 42%; }
+.product-page .detail .vyshivalnye-mashiny .item2 a#btn16 { left: 44%; bottom: 40%; }
+.product-page .detail .vyshivalnye-mashiny .item2 a#btn17 { left: 42%; bottom: 26%; }
+.product-page .detail .vyshivalnye-mashiny .item2 a#btn18 { left: 25%; bottom: 20%; }
+.product-page .detail .vyshivalnye-mashiny .item2 a#btn19 { left: 42%; bottom: 15%; }
+
+.product-page .detail .vyshivalnye-mashiny .item3 a#btn20 { left: 50%; bottom: 92%; }
+.product-page .detail .vyshivalnye-mashiny .item3 a#btn21 { left: 39%; bottom: 79%; }
+.product-page .detail .vyshivalnye-mashiny .item3 a#btn22 { left: 66%; bottom: 75%; }
+.product-page .detail .vyshivalnye-mashiny .item3 a#btn23 { left: 50%; bottom: 78%; }
+.product-page .detail .vyshivalnye-mashiny .item3 a#btn24 { left: 32%; bottom: 62%; }
+.product-page .detail .vyshivalnye-mashiny .item3 a#btn25 { left: 44%; bottom: 63%; }
+.product-page .detail .vyshivalnye-mashiny .item3 a#btn26 { left: 39%; bottom: 42%; }
+.product-page .detail .vyshivalnye-mashiny .item3 a#btn27 { left: 49%; bottom: 59%; }
+.product-page .detail .vyshivalnye-mashiny .item1, .item2, .item3 { position: relative; }
+.product-page .detail .vyshivalnye-mashiny .item1 a, .item2 a, .item3 a  {
+    background-color: #CD1F48;
+    color: #FFFFFF;
+    font-size: 10px;
+    display:block;
+    height: 18px;
+    width: 18px;
+    padding: 2px;
+    border-radius: 50%;
+    position: absolute;
+}
+
 .product-page .banner .content-block {
     z-index: 1;
     position: relative;
@@ -227,7 +280,7 @@ h3.product-title { margin-top: 40px; font-weight: 300; text-transform: inherit; 
     border-radius: 4px;
 }
 .product-page .product .gallery { margin-top: 40px; }
-.product-page > .carousel #gallery-carousel, .in-color #in-color-carousel {
+.product-page .carousel-wrapper > .carousel #gallery-carousel, .in-color #in-color-carousel {
     color: #170724;
     --carousel-button-bg: #fff;
     --carousel-button-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%),
@@ -236,9 +289,9 @@ h3.product-title { margin-top: 40px; font-weight: 300; text-transform: inherit; 
     --carousel-button-svg-height: 20px;
     --carousel-button-svg-stroke-width: 2.5;
 }
-.product-page > .carousel #gallery-carousel img, .in-color #in-color-carousel img { width: 100%; }
-.product-page > .carousel #gallery-carousel .carousel__slide, .in-color #in-color-carousel .carousel__slide { width: 35%; padding: 10px; }
-.product-page > .carousel { background: white; text-align: center; padding: 80px 0; }
+.product-page .carousel-wrapper > .carousel #gallery-carousel img, .in-color #in-color-carousel img { width: 100%; }
+.product-page .carousel-wrapper > .carousel #gallery-carousel .carousel__slide, .in-color #in-color-carousel .carousel__slide { width: 35%; padding: 10px; }
+.product-page .carousel-wrapper > .carousel { background: white; text-align: center; padding: 80px 0; }
 
 #product-carousel {
     margin: 0 60px 100px;
@@ -580,6 +633,7 @@ footer .list-inline-item a svg { width: 30px; }
     font-weight: bold;
 }
 .locale-picker { width: 96px; float: right; }
+.property-table { padding-top: 80px; }
 @media (max-width: 1200px) {
     .btn-quick-order, .btn-add-to-cart { margin-bottom: 20px; }
     .product-page .product-list .item .order-btn { width: 170px; margin: 40px auto 0; }

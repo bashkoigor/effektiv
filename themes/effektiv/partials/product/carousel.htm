@@ -1,34 +1,38 @@
-<div class="container">
-    <div class="row">
-        <div class="col-sm-12">
-            <h2>{{ 'Фотогалерея'|_ }}</h2>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-12">
-            <div id="gallery-carousel" class="carousel">
-                {% if obProduct.images is not empty %}
-                    {% for obImage in obProduct.images %}
-                        <div class="carousel__slide" data-src="{{ obImage.getPath() }}" data-fancybox="gallery">
-                            <img src="{{ obImage.getPath() }}" alt="{{ obImage.description }}" title="{{ obImage.title }}" />
-                        </div>
-                    {% endfor %}
-                {% endif %}
+{% if obCategory.id not in arHidePartial %}
+<div class="container-fluid carousel">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>{{ 'Фотогалерея'|_ }}</h2>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6">
+        <div class="row">
+            <div class="col-sm-12">
+                <div id="gallery-carousel" class="carousel">
+                    {% if obProduct.images is not empty %}
+                        {% for obImage in obProduct.images %}
+                            <div class="carousel__slide" data-src="{{ obImage.getPath() }}" data-fancybox="gallery">
+                                <img src="{{ obImage.getPath() }}" alt="{{ obImage.description }}" title="{{ obImage.title }}" />
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6">
 
-                    </div>
-                    <div class="col-sm-6">
+                        </div>
+                        <div class="col-sm-6">
 
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+{% endif %}

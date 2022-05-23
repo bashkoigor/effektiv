@@ -34,6 +34,7 @@ function onInit() {
     $this['obProduct'] = $obProduct;
     $this['obOffer'] = $obOffer;
     $this['obProductList'] = $this->ProductList->make()->category($obCategory->id)->take(6);
+    $this['arHidePartial'] = [12];
 
     $this->addJs('assets/js/product.js');
 }
@@ -103,43 +104,45 @@ function onInit() {
         </div>
     </div>
     <!-- Benefit block -->
-    <div class="container-fluid benefit">
+    <div class="benefit-wrapper">
         {% partial 'product/benefit' %}
     </div>
     <!-- Banner block -->
-    <div class="container-fluid banner">
+    <div class="banner-wrapper">
         {% partial 'product/banner' %}
     </div>
     <!-- Detail block -->
-    <div class="container-fluid detail" id="detail">
+    <div class="detail-wrapper">
         {% partial 'product/detail' %}
     </div>
     <!-- Carousel block -->
-    <div class="container-fluid carousel">
+    <div class="carousel-wrapper">
         {% partial 'product/carousel' %}
     </div>
     <!-- Benefits block -->
-    <div class="container-fluid benefits">
+    <div class="benefits-wrapper">
         {% partial 'product/benefits' %}
     </div>
     <!-- Other blocks -->
     <div class="container in-color">
         <div class="row">
-            {% partial 'product/carousel-in-color' %}
+            <div class="col-sm-12">
+                {% partial 'product/carousel-in-color' %}
+            </div>
             {% partial 'product/video-block' %}
         </div>
         {% partial 'product/description-block' %}
     </div>
     <!-- Property table -->
-    <div class="container property-table">
+    <div class="property-table-wrapper">
         {% partial 'product/specifications' %}
     </div>
     <!-- Product list block -->
-    <div class="container product-list">
+    <div class="product-list-wrapper">
         {% partial 'product/product-list' %}
     </div>
     <!-- Contact form -->
-    <div class="container contact-form">
+    <div class="contact-form-wrapper">
         {% partial 'product/contact-form' %}
     </div>
 </div>
