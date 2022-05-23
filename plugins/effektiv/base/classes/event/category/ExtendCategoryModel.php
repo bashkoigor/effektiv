@@ -23,7 +23,7 @@ class ExtendCategoryModel
                 'product_video_banner',
                 'product_detail',
                 'product_benefits',
-                'product_colors',
+                'product_models',
                 'product_video',
                 'product_description',
                 'product_specifications',
@@ -80,7 +80,7 @@ class ExtendCategoryModel
                 'language' => 'html',
             ];
 
-            $widget->tabs['fields']['product_colors'] = [
+            $widget->tabs['fields']['product_models'] = [
                 'label' => 'Блок фотокарусель (выбор моделей)',
                 'tab' => 'Элементы карточки товара',
                 'comment' => '',
