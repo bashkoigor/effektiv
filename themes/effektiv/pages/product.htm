@@ -34,7 +34,8 @@ function onInit() {
     $this['obProduct'] = $obProduct;
     $this['obOffer'] = $obOffer;
     $this['obProductList'] = $this->ProductList->make()->category($obCategory->id)->take(6);
-    $this['arHidePartial'] = [12];
+
+    $this['arHide'] = [12];
 
     $this->addJs('assets/js/product.js');
 }
@@ -126,9 +127,7 @@ function onInit() {
     <!-- Other blocks -->
     <div class="container in-color">
         <div class="row">
-            <div class="col-sm-12">
-                {% partial 'product/carousel-in-color' %}
-            </div>
+            {% partial 'product/carousel-in-color' %}
             {% partial 'product/video-block' %}
         </div>
         {% partial 'product/description-block' %}
