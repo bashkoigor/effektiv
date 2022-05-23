@@ -10,6 +10,7 @@ use Lovata\Shopaholic\Controllers\Categories;
 class ExtendCategoryModel
 {
 
+    // TODO: refactoring
     public function subscribe($obEvent)
     {
 
@@ -80,7 +81,7 @@ class ExtendCategoryModel
             ];
 
             $widget->tabs['fields']['product_colors'] = [
-                'label' => 'Блок фотокарусель (разные цвета)',
+                'label' => 'Блок фотокарусель (выбор моделей)',
                 'tab' => 'Элементы карточки товара',
                 'comment' => '',
                 'span' => 'left',
