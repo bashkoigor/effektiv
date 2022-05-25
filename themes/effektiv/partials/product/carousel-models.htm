@@ -1,4 +1,5 @@
-{% if obCategory.id not in arHide %}
+{% set models_status = obProduct.property.getByCode('product_models_status').property_value.getValueString() %}
+{% if obCategory.id not in arHide and models_status == 'on' %}
 <div class="col-sm-12">
 
     {% if obProduct.property.getByCode('product_models').property_value.getValueString() is not empty %}
@@ -19,5 +20,7 @@
 		{% endfor %}
 	</div>
 </div>
+{% else %}
+<style>.product-page .benefits {margin-bottom: 0; padding-bottom: 0;} .product-page .video-block {margin-top: 0!important;}</style>
 {% endif %}
 
