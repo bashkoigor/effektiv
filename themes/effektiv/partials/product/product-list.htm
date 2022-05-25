@@ -1,10 +1,10 @@
 {% if obCategory.id not in arHide %}
 <div class="container product-list">
     
-    {% if obCategory.product_list_title is not empty %}
-        {{obCategory.product_list_title|raw}}
-    {% else %}
+    {% if obProduct.property.getByCode('product_list_title').property_value.getValueString() is not empty %}
         {{ obProduct.property.getByCode('product_list_title').property_value.getValueString()|raw }}
+    {% else %}
+        {{obCategory.product_list_title|raw}}
     {% endif %}
 
     {% for obSubProductList in obProductList|batch(3) %}

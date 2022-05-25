@@ -1,5 +1,5 @@
-{% if obCategory.product_specifications is not empty %}
-	{{obCategory.product_specifications|raw}}
-{% else %}
+{% if obProduct.property.getByCode('product_specifications').property_value.getValueString() is not empty %}
 	{{ obProduct.property.getByCode('product_specifications').property_value.getValueString()|raw }}
+{% else %}
+	{{obCategory.product_specifications|raw}}
 {% endif %}

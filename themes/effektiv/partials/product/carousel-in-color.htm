@@ -1,10 +1,10 @@
 {% if obCategory.id not in arHide %}
 <div class="col-sm-12">
 
-    {% if obCategory.product_models is not empty %}
-        {{obCategory.product_models|raw}}
+    {% if obProduct.property.getByCode('product_models').property_value.getValueString() is not empty %}
+    	{{ obProduct.property.getByCode('product_models').property_value.getValueString()|raw }}
     {% else %}
-        {{ obProduct.property.getByCode('product_models').property_value.getValueString()|raw }}
+        {{obCategory.product_models|raw}}
     {% endif %}
 
 	<div class="carousel mt-5" id="in-color-carousel">

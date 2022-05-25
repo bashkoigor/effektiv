@@ -1,5 +1,5 @@
-{% if obCategory.product_video is not empty %}
-	{{obCategory.product_video|raw}}
-{% else %}
+{% if obProduct.property.getByCode('product_video').property_value.getValueString() is not empty %}
 	{{ obProduct.property.getByCode('product_video').property_value.getValueString()|raw }}
+{% else %}
+	{{obCategory.product_video|raw}}
 {% endif %}

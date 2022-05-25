@@ -1,5 +1,5 @@
-{% if obCategory.product_benefits is not empty %}
-	{{obCategory.product_benefits|raw}}
-{% else %}
+{% if obProduct.property.getByCode('product_benefits').property_value.getValueString() is not empty %}
 	{{ obProduct.property.getByCode('product_benefits').property_value.getValueString()|raw }}
+{% else %}
+	{{obCategory.product_benefits|raw}}
 {% endif %}
