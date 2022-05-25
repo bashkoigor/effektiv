@@ -223,6 +223,23 @@ h3.product-title { margin-top: 40px; font-weight: 300; text-transform: inherit; 
 .product-page .detail .shvejno-vyshivalnye-mashiny .item2 a.btn12 { left: 80%; bottom: 32%; }
 .product-page .detail .shvejno-vyshivalnye-mashiny .item2 a.btn13 { left: 80%; bottom: 25%; }
 .product-page .detail .shvejno-vyshivalnye-mashiny .item2 a.btn14 { left: 80%; bottom: 18%; }
+
+.product-page .detail .shvejno-vyshivalnye-mashiny .item1 a.btn15 { left: 38%; bottom: 92%; }
+.product-page .detail .shvejno-vyshivalnye-mashiny .item1 a.btn16 { left: 61%; bottom: 80%; }
+.product-page .detail .shvejno-vyshivalnye-mashiny .item1 a.btn17 { left: 64%; bottom: 92%; }
+.product-page .detail .shvejno-vyshivalnye-mashiny .item1 a.btn18 { left: 19%; bottom: 61%; }
+.product-page .detail .shvejno-vyshivalnye-mashiny .item1 a.btn19 { left: 27%; bottom: 46%; }
+.product-page .detail .shvejno-vyshivalnye-mashiny .item1 a.btn20 { left: 32%; bottom: 41%; }
+.product-page .detail .shvejno-vyshivalnye-mashiny .item1 a.btn21 { left: 39%; bottom: 34%; }
+.product-page .detail .shvejno-vyshivalnye-mashiny .item1 a.btn22 { left: 38%; bottom: 22%; }
+.product-page .detail .shvejno-vyshivalnye-mashiny .item2 a.btn23 { left: 33%; bottom: 77%; }
+.product-page .detail .shvejno-vyshivalnye-mashiny .item2 a.btn24 { left: 54%; bottom: 86%; }
+.product-page .detail .shvejno-vyshivalnye-mashiny .item2 a.btn25 { left: 24%; bottom: 44%; }
+.product-page .detail .shvejno-vyshivalnye-mashiny .item2 a.btn26 { left: 58%; bottom: 59%; }
+.product-page .detail .shvejno-vyshivalnye-mashiny .item2 a.btn27 { left: 39%; bottom: 25%; }
+.product-page .detail .shvejno-vyshivalnye-mashiny .item2 a.btn28 { left: 37%; bottom: 18%; }
+.product-page .detail .shvejno-vyshivalnye-mashiny .item2 a.btn29 { left: 40%; bottom: 11%; }
+
 .product-page .detail .shvejno-vyshivalnye-mashiny .item1, .item2 { position: relative; }
 .product-page .detail .shvejno-vyshivalnye-mashiny .item1 a, .item2 a {
     background-color: #CD1F48;
@@ -235,11 +252,114 @@ h3.product-title { margin-top: 40px; font-weight: 300; text-transform: inherit; 
     border-radius: 50%;
     position: absolute;
 }
+
+/* manekeny-dlya-shitya */
+.product-page .detail .manekeny-dlya-shitya .item1 a.btn1 { left: 50%; bottom: 79%; }
+.product-page .detail .manekeny-dlya-shitya .item1 a.btn2 { left: 50%; bottom: 37%; }
+.product-page .detail .manekeny-dlya-shitya .item1 a.btn3 { left: 37%; bottom: 33%; }
+.product-page .detail .manekeny-dlya-shitya .item2 a.btn4 { left: 51%; bottom: 80%; }
+.product-page .detail .manekeny-dlya-shitya .item2 a.btn5 { left: 48%; bottom: 37%; }
+.product-page .detail .manekeny-dlya-shitya .item2 a.btn6 { left: 36%; bottom: 30%; }
+
+.product-page .benefits img.manekeny-dlya-shitya { width: 34%; }
+.product-page .detail .manekeny-dlya-shitya .item1, .item2 { position: relative; }
+.product-page .detail .manekeny-dlya-shitya .item1 a, .item2 a {
+    background-color: #CD1F48;
+    color: #FFFFFF;
+    font-size: 10px;
+    display:block;
+    height: 18px;
+    width: 18px;
+    padding: 2px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+/* pylesosy-ciklony */
+.product-page .detail .pylesosy-ciklony .item1 a.btn1 { left: 30%; bottom: 30%; }
+.product-page .detail .pylesosy-ciklony .item1 a.btn2 { left: 50%; bottom: 37%; }
+.product-page .detail .pylesosy-ciklony .item1 a.btn3 { left: 69%; bottom: 33%; }
+.product-page .detail .pylesosy-ciklony .item2 a.btn4 { left: 32%; bottom: 75%; }
+.product-page .detail .pylesosy-ciklony .item2 a.btn5 { left: 65%; bottom: 75%; }
+.product-page .detail .pylesosy-ciklony .item2 a.btn6 { left: 36%; bottom: 30%; }
+.product-page .detail .pylesosy-ciklony .item2 a.btn7 { left: 60%; bottom: 18%; }
+
+.product-page .benefits img.pylesosy-ciklony { width: 80%; }
+.product-page .detail .pylesosy-ciklony .item1, .item2 { position: relative; }
+.product-page .detail .pylesosy-ciklony .item1 a, .item2 a {
+    background-color: #CD1F48;
+    color: #FFFFFF;
+    font-size: 10px;
+    display:block;
+    height: 18px;
+    width: 18px;
+    padding: 2px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+/* utyugi */
+.product-page .detail .utyugi .item1 a.btn1 { left: 47%; bottom: 74%; }
+.product-page .detail .utyugi .item1 a.btn2 { left: 39%; bottom: 56%; }
+.product-page .detail .utyugi .item1 a.btn3 { left: 48%; bottom: 51%; }
+.product-page .detail .utyugi .item1 a.btn4 { left: 40%; bottom: 46%; }
+.product-page .detail .utyugi .item1 a.btn5 { left: 42%; bottom: 76%; }
+.product-page .detail .utyugi .item1 a.btn6 { left: 43%; bottom: 52%; }
+.product-page .detail .utyugi .item2 a.btn7 { left: 50%; bottom: 64%; }
+.product-page .detail .utyugi .item2 a.btn8 { left: 38%; bottom: 53%; }
+.product-page .detail .utyugi .item2 a.btn9 { left: 39%; bottom: 40%; }
+.product-page .detail .utyugi .item2 a.btn10 { left: 52%; bottom: 37%; }
+.product-page .detail .utyugi .item2 a.btn11 { left: 44%; bottom: 70%; }
+.product-page .detail .utyugi .item2 a.btn12 { left: 59%; bottom: 40%; }
+
+.product-page .benefits img.utyugi { width: 90%; }
+.product-page .detail .utyugi .item1, .item2 { position: relative; }
+.product-page .detail .utyugi .item1 a, .item2 a {
+    background-color: #CD1F48;
+    color: #FFFFFF;
+    font-size: 10px;
+    display:block;
+    height: 18px;
+    width: 18px;
+    padding: 2px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+/* otparivateli */
+.product-page .detail .otparivateli .item1 a.btn1 { left: 50%; bottom: 70%; }
+.product-page .detail .otparivateli .item1 a.btn2 { left: 45%; bottom: 64%; }
+.product-page .detail .otparivateli .item1 a.btn3 { left: 51%; bottom: 61%; }
+.product-page .detail .otparivateli .item1 a.btn4 { left: 48%; bottom: 53%; }
+.product-page .detail .otparivateli .item1 a.btn5 { left: 51%; bottom: 23%; }
+.product-page .detail .otparivateli .item2 a.btn6 { left: 51%; bottom: 75%; }
+
+.product-page .detail .otparivateli .item1 a.btn7 { left: 36%; bottom: 42%; }
+.product-page .detail .otparivateli .item1 a.btn8 { left: 57%; bottom: 25%; }
+.product-page .detail .otparivateli .item1 a.btn9 { left: 72%; bottom: 20%; }
+.product-page .detail .otparivateli .item2 a.btn10 { left: 40%; bottom: 47%; }
+.product-page .detail .otparivateli .item2 a.btn11 { left: 51%; bottom: 36%; }
+.product-page .detail .otparivateli .item2 a.btn12 { left: 57%; bottom: 47%; }
+
+.product-page .benefits img.otparivateli { width: 90%; }
+.product-page .detail .otparivateli .item1, .item2 { position: relative; }
+.product-page .detail .otparivateli .item1 a, .item2 a {
+    background-color: #CD1F48;
+    color: #FFFFFF;
+    font-size: 10px;
+    display:block;
+    height: 18px;
+    width: 18px;
+    padding: 2px;
+    border-radius: 50%;
+    position: absolute;
+}
+
 /* vyshivalnye-mashiny  */
 .product-page .benefits .vyshivalnye-mashiny img.item1 { width: 60%; }
 .product-page .benefits .vyshivalnye-mashiny img.item2 { width: 80%; }
 .product-page .benefits .vyshivalnye-mashiny img.item3 { width: 40%; }
-.product-page .vyshivalnye-mashiny nav { margin: 0 auto; display: inline-block; }
+.product-page .vyshivalnye-mashiny nav, .utyugi nav { margin: 0 auto; display: inline-block; }
 .product-page .detail .vyshivalnye-mashiny .item1 a#btn1 { left: 48%; bottom: 94%; }
 .product-page .detail .vyshivalnye-mashiny .item1 a#btn2 { left: 47%; bottom: 81%; }
 .product-page .detail .vyshivalnye-mashiny .item1 a#btn3 { left: 37%; bottom: 73%; }
@@ -281,6 +401,9 @@ h3.product-title { margin-top: 40px; font-weight: 300; text-transform: inherit; 
     border-radius: 50%;
     position: absolute;
 }
+
+.video-background .e-color-green { background: #B9DB01BD!important; }
+.video-background .e-color-red { background: #CD1F4BC4!important; }
 
 .product-page .banner .content-block {
     z-index: 1;
