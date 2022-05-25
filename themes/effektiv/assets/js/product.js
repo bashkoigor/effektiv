@@ -102,33 +102,46 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 });
 
 // Product Carousel
-const productCarousel = new Carousel(document.querySelector("#product-carousel"), {
-    Dots: false,
-});
-const thumbCarousel = new Carousel(document.querySelector("#product-thumb-carousel"), {
-    Sync: {
-        target: productCarousel,
-        friction: 0,
-    },
-    Dots: false,
-    Navigation: false,
-    center: true,
-    slidesPerPage: 1,
-    infinite: false,
-});
+var obProductCarousel = document.querySelector("#product-carousel");
+var obThumbCarousel = document.querySelector("#product-thumb-carousel");
+
+if (obProductCarousel && obThumbCarousel) {
+    const productCarousel = new Carousel(obProductCarousel, {
+        Dots: false,
+    });
+    const thumbCarousel = new Carousel(obThumbCarousel, {
+        Sync: {
+            target: productCarousel,
+            friction: 0,
+        },
+        Dots: false,
+        Navigation: false,
+        center: true,
+        slidesPerPage: 1,
+        infinite: false,
+    });
+}
+
 // Carousel block
-const galleryCarousel = new Carousel(document.querySelector("#gallery-carousel"), {
-    slidesPerPage : 1,
-    center : false
-});
-Fancybox.bind("#gallery-carousel a", {
-    caption: function (fancybox, carousel, slide) {},
-});
+var obGalleryCarousel = document.querySelector("#gallery-carousel");
+if (obGalleryCarousel) {
+    const galleryCarousel = new Carousel(obGalleryCarousel, {
+        slidesPerPage : 1,
+        center : false
+    });
+    Fancybox.bind("#gallery-carousel a", {
+        caption: function (fancybox, carousel, slide) {},
+    });
+}
+
 // Other blocks
-const inColorCarousel = new Carousel(document.querySelector("#in-color-carousel"), {
-    slidesPerPage: 1,
-    center: false
-});
-Fancybox.bind("#in-color-carousel a", {
-    caption: function (fancybox, carousel, slide) {},
-});
+var obInColorCarousel = document.querySelector("#in-color-carousel");
+if (obInColorCarousel) {
+    const inColorCarousel = new Carousel(obInColorCarousel, {
+        slidesPerPage: 1,
+        center: false
+    });
+    Fancybox.bind("#in-color-carousel a", {
+        caption: function (fancybox, carousel, slide) {},
+    });
+}
