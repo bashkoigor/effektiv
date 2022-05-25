@@ -71,7 +71,7 @@ class ExtendCategoryModel
             ];
 
             $widget->tabs['fields']['product_benefits'] = [
-                'label' => 'Ключевые преимущества',
+                'label' => 'Ключевые преимущества (иконки)',
                 'tab' => 'Элементы карточки товара',
                 'comment' => '',
                 'span' => 'left',
@@ -112,7 +112,7 @@ class ExtendCategoryModel
             ];
 
             $widget->tabs['fields']['product_specifications'] = [
-                'label' => 'Технические характеристики',
+                'label' => 'Технические характеристики (таблица)',
                 'tab' => 'Элементы карточки товара',
                 'comment' => '',
                 'span' => 'left',
@@ -122,7 +122,7 @@ class ExtendCategoryModel
             ];
 
             $widget->tabs['fields']['product_list_title'] = [
-                'label' => 'Список товаров',
+                'label' => 'Список товаров (шапка)',
                 'tab' => 'Элементы карточки товара',
                 'comment' => 'Логика выода товаров - partial/product/product-list.htm',
                 'span' => 'left',
