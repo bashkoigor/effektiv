@@ -2,9 +2,9 @@
 <div class="catalog-page my-5">
     <div class="container">
         <h1>{{ obCategory.name }}</h1>
-        {% if obProductList is not empty %}
+        {% if arProductList is not empty %}
         <div class="row row-cols-1 row-cols-lg-3 mt-5">
-            {% for obProduct in obProductList %}
+            {% for obProduct in arProductList %}
             <div class="col pb-4">
                 <div class="card">
                     <a href="{{ obProduct.getPageUrl('product') }}">
@@ -17,6 +17,7 @@
             </div>
             {% endfor %}
         </div>
+        {% partial 'catalog/pagination' %}
         {% else %}
         <p>{{ 'Товары не найдены'|_ }}</p>
         {% endif %}
