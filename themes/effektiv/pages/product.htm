@@ -35,7 +35,7 @@ function onInit() {
     $this['obOffer'] = $obOffer;
     $this['obProductList'] = $this->ProductList->make()->category($obCategory->id)->take(6);
 
-    $this['arHide'] = [12];
+    $this['arHide'] = [12,13,14];
 
     $this->addJs('assets/js/product.js');
 }
