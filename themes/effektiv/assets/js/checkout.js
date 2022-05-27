@@ -1,11 +1,8 @@
 // Create order
-function createkOrder(userFields) {
+function createkOrder(userFields, orderFields) {
 
     let data = {
-        'order': {
-            'payment_method_id': 1,
-            'shipping_type_id': 1
-        },
+        'order': orderFields,
         'user': userFields
     };
 
@@ -38,7 +35,11 @@ function createkOrder(userFields) {
                         'phone': form.querySelector('[name="phone"]').value,
                         'email': form.querySelector('[name="email"]').value
                     };
-                    createkOrder(userFields); // Create order
+                    const orderFields = {
+                        'payment_method_id': 1,
+                        'shipping_type_id': form.querySelector('[name="shipping_type_id"]').value
+                    }
+                    createkOrder(userFields, orderFields); // Create order
                 }
 
                 form.classList.add('was-validated')

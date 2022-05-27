@@ -4,7 +4,7 @@ $(document).on('change', '.cart-quantity', (e) => {
         form = button.parents('.product-wrapper');
 
     let data = {
-    'cart': [
+        'cart': [
             {
                 'offer_id': form.find('input[name="offer_id"]').val(),
                 'quantity': form.find('input[name="quantity"]').val(),
@@ -19,15 +19,25 @@ $(document).on('change', '.cart-quantity', (e) => {
     });
 });
 
-// Event add product to cart
+// Event update shipping type
+$(document).on('change', 'input[type=radio][name=shipping_type_id]', function () {
+    let data = {
+        'shipping_type_id': this.value
+    };
+    $.request('Cart::onSaveData', {
+        'data': data
+    });
+});
+
+// Event remove product from cart
 $(document).on('click', '.cart-remove', (e) => {
 
     const button = $(e.currentTarget),
         form = button.parents('.product-wrapper');
 
     let data = {
-    'cart': [
-                form.find('input[name="offer_id"]').val()
+        'cart': [
+            form.find('input[name="offer_id"]').val()
         ]
     };
 
