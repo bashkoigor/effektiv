@@ -7,6 +7,8 @@ is_hidden = 0
 ==
 function onInit() {
     $this->addJs('assets/js/cart.js');
+    $this->addJs('assets/js/cdek/widjet.js');
+    $this->addJs('assets/js/cdek/main.js');
 }
 ==
 <!-- Cart page -->
@@ -15,7 +17,7 @@ function onInit() {
         <div class="row">
             <div class="col-12">
                 <div class="cart-table-wrapper">
-                    {% partial 'cart/cart-table'  %}
+                    {% partial 'cart/cart-table' %}
                 </div>
             </div>
         </div>

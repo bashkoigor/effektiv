@@ -785,6 +785,9 @@ footer .list-inline-item a svg { width: 30px; }
 }
 .locale-picker { width: 96px; float: right; }
 .property-table { padding-top: 80px; }
+
+.CDEK-widget__popup-mask { z-index: 1030!important; }
+
 @media (max-width: 1200px) {
     .btn-quick-order, .btn-add-to-cart { margin-bottom: 20px; }
     .product-page .product-list .item .order-btn { width: 170px; margin: 40px auto 0; }

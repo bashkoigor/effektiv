@@ -1,3 +1,11 @@
+// Debug
+/*
+$.request('Cart::onGetCartData', {
+    complete: ({responseJSON}) => {
+        console.log( responseJSON );
+    }
+});
+*/
 // Create order
 function createkOrder(userFields, orderFields) {
 
@@ -37,7 +45,11 @@ function createkOrder(userFields, orderFields) {
                     };
                     const orderFields = {
                         'payment_method_id': 1,
-                        'shipping_type_id': form.querySelector('[name="shipping_type_id"]').value
+                        'shipping_type_id': form.querySelector('[name="shipping_type_id"]').value,
+                        'property': {
+                            'cdek_price': form.querySelector('[name="cdek_price"]').value,
+                            'cdek_info': form.querySelector('[name="cdek_info"]').value
+                        }
                     }
                     createkOrder(userFields, orderFields); // Create order
                 }

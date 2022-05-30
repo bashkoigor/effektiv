@@ -1,9 +1,10 @@
+{% set cdekShippingTypeId = 2 %}
 {% set obCartPositionList = Cart.get() %}
 
 {% if obCartPositionList.isNotEmpty() %}
     <div class="table-responsive">
     <form action="">
-        <table class="table table-bordered">
+        <table class="table table-bordered cartData">
             <thead>
             <tr>
                 <th scope="col"></th>
@@ -35,6 +36,11 @@
                     </td>
                     <td>{{ obOffer.currency }} {{ obOffer.price }}</td>
                     <td>
+                        <input type="hidden" name="weight" value="{{ obOffer.weight }}">
+                        <input type="hidden" name="height" value="{{ obOffer.height }}">
+                        <input type="hidden" name="length" value="{{ obOffer.length }}">
+                        <input type="hidden" name="width" value="{{ obOffer.width }}">
+
                         <input type="hidden" name="offer_id" value="{{ obOffer.id }}">
                         <input type="text" name="quantity" class="form-control cart-quantity" value="{{ obCartPosition.quantity }}">
                     </td>
@@ -67,24 +73,41 @@
                     <div class="form-check{% if not loop.first %} mt-2{% endif %}">
                         <input class="form-check-input" type="radio" name="shipping_type_id" id="sipping-type-{{ obShippingType.id }}" value="{{ obShippingType.id }}" {% if obShippingType.id == arCartData.shipping_type_id %}checked{% endif %}>
                         <label class="form-check-label" for="sipping-type-{{ obShippingType.id }}">
-                            {{ obShippingType.name }}
+                            {{ obShippingType.name }} 
                         </label>
+                        {% if obShippingType.id == cdekShippingTypeId %}
+                            <a href='javascript:void(0);' class="openCdekModal {% if obShippingType.id == arCartData.shipping_type_id %}d-inline-block{%else%}d-none{% endif %}">{{ 'Показать ПВЗ'|_ }}</a>
+                        {% endif %}
                     </div>
                 {% endfor %}
             </fieldset>
         {% endif %}
 
         <div class="result">
-            <h4 class="mb-4">Сумма заказов</h4>
+            <h4 class="mb-4">{{ 'Сумма заказов'|_ }}</h4>
             <table class="table table-bordered">
                 <tbody>
+                <tr class="delivery_info">
+                    {% if arCartData.shipping_type_id == cdekShippingTypeId and arCartData.property.cdek_price is not empty %}
+                        <th>{{ 'Доставка'|_ }}</th>
+                        <td>{{ obCartPositionList.getCurrency() }} {{ arCartData.property.cdek_price|number_format(0, '', ' ') }}</td>
+                    {% endif %}
+                </tr>
                 <tr>
-                    <th>Итого</th>
+                    <th>{{ 'Заказ'|_ }}</th>
+                    <td>{{ obCartPositionList.getCurrency() }} {{ obCartPositionList.getTotalPrice() }}</td>
+                </tr>
+                <tr>
+                    <th>{{ 'Итого'|_ }}</th>
                     <td>
                         <strong>
                             {{ obCartPositionList.getCurrency() }}
-                            <span data-group="position_total_price" data-field="price_without_tax">
-                                {{ obCartPositionList.getTotalPrice() }}
+                            <span class="total-price">
+                                {% if arCartData.shipping_type_id == cdekShippingTypeId and arCartData.property.cdek_price is not empty %}
+                                    {{ (obCartPositionList.getTotalPriceValue() + arCartData.property.cdek_price)|number_format(0, '', ' ') }}
+                                {% else %}
+                                    {{ obCartPositionList.getTotalPrice() }}
+                                {% endif %}
                             </span>
                         </strong>
                     </td>

@@ -12,15 +12,33 @@ $(document).on('change', '.cart-quantity', (e) => {
         ]
     };
 
-    // Send ajax request and update cart items
-    $.request('Cart::onUpdate', {
-        'data': data,
-        'update': {'cart/cart-table': '.cart-table-wrapper','cart/header-cart-info': '.header-cart-wrapper'},
-    });
+    removeCdekData();
+
+    setTimeout(function () {
+        // Send ajax request and update cart items
+        $.request('Cart::onUpdate', {
+            'data': data,
+            'update': {'cart/cart-table': '.cart-table-wrapper','cart/header-cart-info': '.header-cart-wrapper'},
+        });
+        // Remove delivery info
+        resetDeliveryInfo();   
+    }, 500);
+
 });
 
 // Event update shipping type
 $(document).on('change', 'input[type=radio][name=shipping_type_id]', function () {
+    if (this.value == cdekShippingTypeId && $(this).is(':checked')) { // If shipping is CDEK
+        Cookies.set('shippingTypeId', cdekShippingTypeId);
+        $(".openCdekModal").removeClass( "d-none" ).addClass( "d-inline-block" );
+    } else {
+        Cookies.set('shippingTypeId', 0);
+        $(".openCdekModal").removeClass( "d-inline-block" ).addClass( "d-none" );
+        resetDeliveryInfo();
+        $.request('onAjax', {
+            update: { 'cart/total-price': '.total-price' }
+        });
+    }
     let data = {
         'shipping_type_id': this.value
     };
@@ -41,10 +59,20 @@ $(document).on('click', '.cart-remove', (e) => {
         ]
     };
 
-    $.request('Cart::onRemove', {
-        'data': data,
-        'update': {'cart/cart-table': '.cart-table-wrapper', 'cart/header-cart-info': '.header-cart-wrapper'},
-    });
+    removeCdekData();
+
+    setTimeout(function () {
+        // Send ajax request and update cart items
+        $.request('Cart::onRemove', {
+            'data': data,
+            'update': {'cart/cart-table': '.cart-table-wrapper', 'cart/header-cart-info': '.header-cart-wrapper'},
+        });
+        // Remove delivery info
+        resetDeliveryInfo();   
+    }, 500);
 
 });
 
+function resetDeliveryInfo() {
+    $(".delivery_info").html("");
+}

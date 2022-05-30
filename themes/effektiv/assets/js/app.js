@@ -1,3 +1,6 @@
+// Global variable
+const cdekShippingTypeId = 2;
+
 // Modal menu by Ajax, show categorys.
 $.request('onAjax', {
     update: { 'site/modal-menu': '.modal-menu-wrap' }
@@ -27,9 +30,33 @@ function scrollToTop() {
     });
 }
 
+// Open call back modal form
 $(document).on('click', '#btn-call-back', (e) => {
-
     $('#callBackForm').modal('show');
-
 });
+
+// 
+$(document).on('click', '.btn-add-to-cart', (e) => {
+    removeCdekData();
+});
+
+$(document).on('click', '.btn-quick-order', (e) => {
+    removeCdekData();
+});
+
+function removeCdekData() {
+    let cdekData = {
+        'property': {
+            'cdek_info': '', 
+            'cdek_price': ''
+        }
+    };
+
+    // Delete cdek data from user cart if shipping type id is CDEK
+    if (Cookies.get('shippingTypeId') == cdekShippingTypeId) {
+        $.request('Cart::onSaveData', {
+            'data': cdekData
+        });  
+    }
+}
 
