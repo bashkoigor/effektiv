@@ -5,9 +5,31 @@ layout = "default"
 [OrderPage]
 slug = "{{ :slug }}"
 ==
-
+function onStart()
+{
+    if(isset($_GET['result'])) {
+        $this['payKeeperResult'] = $_GET['result'];
+    }
+}
+==
 {# Get order object #}
 {% set obOrder = OrderPage.get() %}
+
+{% set cdekShippingTypeId = 2 and payKeeperResult is empty %}
+{% if obOrder.payment_method_id == cdekShippingTypeId %}
+<form method='POST' action='https://demo.paykeeper.ru/create/' target='payKeeperFrame' name="payKeeper" id="payKeeper">
+    <input type="hidden" name="sum" value="{{ obOrder.total_price_value + obOrder.property.cdek_price }}">
+    <input type="hidden" name="orderid" value="{{ obOrder.order_number }}">
+    <!-- <input type="hidden" name="user_result_callback" value="{{ url('success') }}/{{ obOrder.secret_key}}"> -->
+    <input type="hidden" name="service_name" value="{{ 'Оплата заказа'|_ }}">
+</form>
+<script>
+    window.onload=function(){
+        window.setTimeout(function() { document.payKeeper.submit(); }, 300);
+    };
+</script>
+<iframe name="payKeeperFrame" frameborder="0" border="0" cellspacing="0" style="border-style: none; width: 100%; height: 1100px;"></iframe>
+{% else %}
 <!-- Success page -->
 <div class="success-page my-5">
     <div class="container">
@@ -21,3 +43,4 @@ slug = "{{ :slug }}"
         </div>
     </div>
 </div>
+{% endif %}

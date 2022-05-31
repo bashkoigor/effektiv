@@ -44,7 +44,7 @@ function createkOrder(userFields, orderFields) {
                         'email': form.querySelector('[name="email"]').value
                     };
                     const orderFields = {
-                        'payment_method_id': 1,
+                        'payment_method_id': form.querySelector('[name="payment_method_id"]').value,
                         'shipping_type_id': form.querySelector('[name="shipping_type_id"]').value,
                         'property': {
                             'cdek_price': form.querySelector('[name="cdek_price"]').value,

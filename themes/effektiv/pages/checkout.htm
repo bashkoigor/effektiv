@@ -51,7 +51,7 @@ function onInit() {
                         <textarea class="form-control" id="validationCustom06" name="comment" data-group="order.property"></textarea>
                     </div>
                     <input type="hidden" class="form-control" name="shipping_type_id" value="{{ arCartData.shipping_type_id }}" data-group="order">
-                    <input type="hidden" class="form-control" name="payment_method_id" value="1" data-group="order">
+                    <input type="hidden" class="form-control" name="payment_method_id" value="{{ arCartData.payment_method_id }}" data-group="order">
                     <input type="hidden" class="form-control" name="cdek_price" value="{{ arCartData.property.cdek_price }}" data-group="order">
                     <input type="hidden" class="form-control" name="cdek_info" value="{{ arCartData.property.cdek_info }}" data-group="order">
                     <div class="col-12">

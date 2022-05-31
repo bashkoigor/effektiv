@@ -47,6 +47,16 @@ $(document).on('change', 'input[type=radio][name=shipping_type_id]', function ()
     });
 });
 
+// Event update payment method
+$(document).on('change', 'input[type=radio][name=payment_method_id]', function () {
+    let data = {
+        'payment_method_id': this.value
+    };
+    $.request('Cart::onSaveData', {
+        'data': data
+    });
+});
+
 // Event remove product from cart
 $(document).on('click', '.cart-remove', (e) => {
 
