@@ -1,0 +1,26 @@
+<pre>
+</pre>
+
+<table class="table data">
+    <thead>
+        <tr>
+            <th><a href="javascript:;">Название</a></th>
+            <th><a href="javascript:;">USD</a></th>
+            <th><a href="javascript:;">EUR</a></th>
+            <th><a href="javascript:;">RUB</a></th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+    $obOfferList = \Lovata\Shopaholic\Models\Offer::active()->get();
+    foreach ($obOfferList as $obOffer) { ?>
+    <tr class="rowlink">
+        <td><?= $obOffer->name ?></td>
+        <td><input class="form-control" type="number" name="Offer[price_list][1][price]" value="<?= $obOffer->price_list[1]['price'] ?>" step="any"></td>
+        <td><input class="form-control" type="number" name="Offer[price_list][2][price]" value="<?= $obOffer->price_list[2]['price'] ?>" step="any"></td>
+        <td><input class="form-control" type="number" name="Offer[price_list][3][price]" value="<?= $obOffer->price_list[3]['price'] ?>" step="any"></td>
+    </tr>
+    <?php } ?>
+    </tbody>
+</table>
+

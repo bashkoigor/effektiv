@@ -1,0 +1,7 @@
+tabs:
+    fields:
+        price_list:
+            span: full
+            type: partial
+            path: ~/plugins/effektiv/base/views/offer_price_list.htm
+            tab: 'Цены'

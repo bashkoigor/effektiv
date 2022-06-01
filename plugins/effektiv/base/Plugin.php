@@ -29,7 +29,26 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
         return [
-            '\Effektiv\Base\Components\Breadcrumbs' => 'Breadcrumbs'
+            '\Effektiv\Base\Components\Breadcrumbs' => 'Breadcrumbs',
+            '\Effektiv\Base\Components\SiteSettings' => 'SiteSettings'
+        ];
+    }
+
+    /**
+     * Register settings
+     * @return array
+     */
+    public function registerSettings()
+    {
+        return [
+            'config'    => [
+                'label'       => 'Effektiv',
+                'description' => 'Общие настройки',
+                'icon'        => 'icon-cogs',
+                'class'       => 'Effektiv\Base\Models\Settings',
+                'permissions' => ['effektiv-site-settings'],
+                'order'       => 1000,
+            ],
         ];
     }
 
