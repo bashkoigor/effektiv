@@ -12,15 +12,22 @@
     </thead>
     <tbody>
     <?php
-    $obOfferList = \Lovata\Shopaholic\Models\Offer::active()->get();
+    $obOfferList = \Lovata\Shopaholic\Models\Offer::active()->paginate(10);
     foreach ($obOfferList as $obOffer) { ?>
     <tr class="rowlink">
         <td><?= $obOffer->name ?></td>
-        <td><input class="form-control" type="number" name="Offer[price_list][1][price]" value="<?= $obOffer->price_list[1]['price'] ?>" step="any"></td>
-        <td><input class="form-control" type="number" name="Offer[price_list][2][price]" value="<?= $obOffer->price_list[2]['price'] ?>" step="any"></td>
-        <td><input class="form-control" type="number" name="Offer[price_list][3][price]" value="<?= $obOffer->price_list[3]['price'] ?>" step="any"></td>
+        <td><input class="form-control" type="number" name="Offer[<?= $obOffer->id ?>][1]" value="<?= $obOffer->price_list[1]['price'] ?>" step="any"></td>
+        <td><input class="form-control" type="number" name="Offer[<?= $obOffer->id ?>][2]" value="<?= $obOffer->price_list[2]['price'] ?>" step="any"></td>
+        <td><input class="form-control" type="number" name="Offer[<?= $obOffer->id ?>][3]" value="<?= $obOffer->price_list[3]['price'] ?>" step="any"></td>
     </tr>
     <?php } ?>
     </tbody>
 </table>
 
+<style>
+    .pagination_wrapper { float: right; } .pagination li { display: inline; list-style-type: none; padding-right: 20px; } .pagination_wrapper nav { display: inline-block; }
+</style>
+<div class="pagination_wrapper">
+    <span>Отображено записей: <?= $obOfferList->count() ?> из <?= $obOfferList->total() ?></span>
+    <?= $obOfferList->links() ?>
+</div>

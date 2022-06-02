@@ -8,6 +8,8 @@ use System\Classes\PluginBase;
 use Effektiv\Base\Classes\Event\Product\ExtendProductFieldsHandler;
 use Effektiv\Base\Classes\Event\Product\ExtendProductModel;
 
+use Effektiv\Base\Classes\Event\Settings\ExtendSettingsModel;
+
 use Effektiv\Base\Classes\Event\Category\ExtendCategoryFieldsHandler;
 use Effektiv\Base\Classes\Event\Category\ExtendCategoryModel;
 
@@ -71,5 +73,8 @@ class Plugin extends PluginBase
 
         // Custom fields in category backend panel
         Event::subscribe(ExtendCategoryModel::class);
+
+        // Custom settings
+        Event::subscribe(ExtendSettingsModel::class);
     }
 }
