@@ -69,9 +69,10 @@ function createQuickOrder(name, phone) {
     });
 }
 
-// Validate quick order modal form
 (function () {
     'use strict'
+
+    // Validate quick order modal form
 
     // Fetch all the forms we want to apply custom Bootstrap validation styles to
     var forms = document.querySelectorAll('.quick-order-needs-validation')

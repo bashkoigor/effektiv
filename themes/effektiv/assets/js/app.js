@@ -60,22 +60,38 @@ function removeCdekData() {
     }
 }
 
-function sendMail(name, phone) {
+function sendCallBack(name, phone) {
     let data = {
         'callBack': {
             'name': name,
             'phone': phone
         }
     };
-    $.request('SendMail::onSend', {
+    $.request('SendMail::onSendCallBack', {
         'data': data,
-        'update': {'site/success-call-back': '#successCallBackForm'},
+        'update': {'site/success-call-back': '#successCallBackForm'}
     });
 }
 
-// Validate quick order modal form
+function sendContactForm(name, email, phone, message) {
+    let data = {
+        'contactForm': {
+            'name': name,
+            'email': email,
+            'phone': phone,
+            'text': message
+        }
+    };
+    $.request('SendMail::onSendContactForm', {
+        'data': data,
+        'update': {'site/contact-form-result': '#contactFormResult'}
+    });
+}
+
 (function () {
     'use strict'
+
+    // Validate quick order modal form
 
     // Fetch all the forms we want to apply custom Bootstrap validation styles to
     var forms = document.querySelectorAll('.call-back-needs-validation')
@@ -91,8 +107,33 @@ function sendMail(name, phone) {
                     event.preventDefault()
                     var name = form.querySelector('[name="first_name"]').value;
                     var phone = form.querySelector('[name="phone"]').value;
-                    sendMail(name, phone);
+                    sendCallBack(name, phone);
                 }
+                form.classList.add('was-validated')
+            }, false)
+        })
+
+    // Validate contact form
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms_ = document.querySelectorAll('.contact-form-needs-validation')
+
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms_)
+        .forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                } else {
+                    event.preventDefault()
+                    var name = form.querySelector('[name="first_name"]').value;
+                    var email = form.querySelector('[name="email"]').value;
+                    var phone = form.querySelector('[name="phone"]').value;
+                    var message = form.querySelector('[name="message"]').value;
+                    sendContactForm(name, email, phone, message);
+                }
+
                 form.classList.add('was-validated')
             }, false)
         })
