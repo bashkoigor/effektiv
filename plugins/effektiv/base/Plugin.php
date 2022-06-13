@@ -31,8 +31,9 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
         return [
-            '\Effektiv\Base\Components\Breadcrumbs' => 'Breadcrumbs',
-            '\Effektiv\Base\Components\SiteSettings' => 'SiteSettings'
+            '\Effektiv\Base\Components\Breadcrumbs'     => 'Breadcrumbs',
+            '\Effektiv\Base\Components\SiteSettings'    => 'SiteSettings',
+            '\Effektiv\Base\Components\SendMail'        => 'SendMail'
         ];
     }
 

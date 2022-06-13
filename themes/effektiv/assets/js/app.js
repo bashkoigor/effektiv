@@ -60,3 +60,40 @@ function removeCdekData() {
     }
 }
 
+function sendMail(name, phone) {
+    let data = {
+        'callBack': {
+            'name': name,
+            'phone': phone
+        }
+    };
+    $.request('SendMail::onSend', {
+        'data': data,
+        'update': {'site/success-call-back': '#successCallBackForm'},
+    });
+}
+
+// Validate quick order modal form
+(function () {
+    'use strict'
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('.call-back-needs-validation')
+
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                } else {
+                    event.preventDefault()
+                    var name = form.querySelector('[name="first_name"]').value;
+                    var phone = form.querySelector('[name="phone"]').value;
+                    sendMail(name, phone);
+                }
+                form.classList.add('was-validated')
+            }, false)
+        })
+})()

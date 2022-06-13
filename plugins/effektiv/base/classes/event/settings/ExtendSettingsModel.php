@@ -20,7 +20,7 @@ class ExtendSettingsModel
 
 			/** @var \Model $obElement */
             $obElement->bindEvent('model.beforeSave', function () use ($obElement) {
-                
+
                 $arInput = Input::all();
 
                 $obPrice = new Price();
