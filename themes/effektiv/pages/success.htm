@@ -15,8 +15,8 @@ function onStart()
 {# Get order object #}
 {% set obOrder = OrderPage.get() %}
 
-{% set cdekShippingTypeId = 2 and payKeeperResult is empty %}
-{% if obOrder.payment_method_id == cdekShippingTypeId %}
+{% set cdekShippingTypeId = 2 %}
+{% if obOrder.payment_method_id == cdekShippingTypeId %} {# and payKeeperResult is empty #}
 <form method='POST' action='https://demo.paykeeper.ru/create/' target='payKeeperFrame' name="payKeeper" id="payKeeper">
     <input type="hidden" name="sum" value="{{ obOrder.total_price_value + obOrder.property.cdek_price }}">
     <input type="hidden" name="orderid" value="{{ obOrder.order_number }}">
