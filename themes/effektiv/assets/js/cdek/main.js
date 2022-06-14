@@ -23,11 +23,13 @@ var widjet = new ISDEKWidjet({
     showLogs: true,
     hideMessages: false,
     path: 'https://widget.cdek.ru/widget/scripts/',
-    servicepath: 'https://widget.cdek.ru/widget/scripts/service.php', //ссылка на файл service.php на вашем сайте
+    //servicepath: 'https://widget.cdek.ru/widget/scripts/service.php', //ссылка на файл service.php на вашем сайте
+    servicepath: 'https://effektiv.ie/sdek/service.php',
     choose: true,
     popup: true,
     country: 'Россия',
     defaultCity: 'Калининград',
+    //defaultCity: 'auto',
     cityFrom: 'Москва',
     link: false,
     hidedress: true,
