@@ -821,7 +821,7 @@ footer .list-inline-item a svg { width: 30px; }
 @media (max-width: 576px) {
     .search-bth {top: 6px; left: -10px;}
     .local-picker-wrapper {width: 70px;}
-    .locale-picker {top: 0px; left: 12px;}
+    .locale-picker {top: 0px; left: 30px;}
     .logo img {width: 190px;}
     #btn-call-back { right: 60px; }
     .breadcrumb a { font-size: 10px; }
@@ -834,7 +834,7 @@ footer .list-inline-item a svg { width: 30px; }
     .product-page .order-btn { width: 170px; margin: 0 auto; }
     .property-table table { font-size: 9px }
     footer .row { text-align: center; }
-    #menu-title { width: auto; position: absolute; font-size: 26px; left: 30px; top: 18px; }
+    #menu-title { width: auto; position: absolute; font-size: 26px; top: 18px; }
     #hide { display: none!important; }
     .menu { padding: 0; }
     #to-top { bottom: 60px; }
