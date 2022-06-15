@@ -35,7 +35,7 @@ $(document).on('click', '#btn-call-back', (e) => {
     $('#callBackForm').modal('show');
 });
 
-// 
+//
 $(document).on('click', '.btn-add-to-cart', (e) => {
     removeCdekData();
 });
@@ -44,10 +44,15 @@ $(document).on('click', '.btn-quick-order', (e) => {
     removeCdekData();
 });
 
+// Locale switcher
+$(".locale-picker .dropdown .title").click(function () {
+    $(this).parent().toggleClass("closed");
+});
+
 function removeCdekData() {
     let cdekData = {
         'property': {
-            'cdek_info': '', 
+            'cdek_info': '',
             'cdek_price': ''
         }
     };
@@ -56,7 +61,7 @@ function removeCdekData() {
     if (Cookies.get('shippingTypeId') == cdekShippingTypeId) {
         $.request('Cart::onSaveData', {
             'data': cdekData
-        });  
+        });
     }
 }
 

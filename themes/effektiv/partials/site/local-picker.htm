@@ -1,0 +1,14 @@
+<section class="locale-picker">
+    <div class="dropdown closed">
+        <div class="title">{{ activeLocale }}</div>
+        <ul name="locale" data-request="onSwitchLocale">
+            {% for code, name in localePicker.locales %}
+            <li class="{{ code == activeLocale ? 'selected' }}">
+                <a href="{{ url(code) }}" data-request="onSwitchLocale" data-request-data="locale: '{{ code }}'">
+                    {{ code }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>

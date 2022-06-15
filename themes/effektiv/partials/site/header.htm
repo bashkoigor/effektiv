@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-2 col-sm-2 col-md-3 col-lg-2 col-xl-2">
             <div id="menu-title" class="center" data-bs-toggle="modal" data-bs-target="#menu-model">
                 <div>
                     <i aria-hidden="true" class="fas fa-bars"></i>
@@ -8,29 +8,38 @@
                 </div>
             </div>
         </div>
-        <div class="logo col-md-4">
+        <div class="logo col-7 col-sm-8 col-md-4 col-lg-5 col-xl-7">
             <a href="{{ 'index'|page }}">
                 <img src="{{ 'logo/Effektiv_TransparentB_444x75.png'|media }}" alt="" class="center">
             </a>
         </div>
-        <div class="col-md-4">
+        <div class="col-3 col-sm-2 col-md-2 col-lg-2 col-xl-1">
+            <div class="local-picker-wrapper">
+                <span class="search-bth">
+                    <i class="fas fa-search"></i>
+                </span>
+                {% partial 'site/local-picker' %}
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3 col-xl-2 mob-right">
             <div class="row">
-                <div class="col-5">
+                <div class="col-12 col-lg-8">
                     <div class="header-cart-wrapper">
                         {% partial 'cart/header-cart-info' %}
                     </div>
                 </div>
-                <div class="col-7">
-                    <div class="header-block-wrapper">
+                <div class="col col-lg-4">
+                    <div class="call-back-wrapper d-none d-lg-block">
                         <div id="btn-call-back">
                             <i class="fas fa-phone-square"></i>
-                        </div>
-                        <div class="locale-picker">
-                            {% component 'localePicker' %}
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="row">
+
+    </div>
 </div>
+
