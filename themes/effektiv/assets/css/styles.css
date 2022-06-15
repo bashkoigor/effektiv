@@ -819,9 +819,9 @@ footer .list-inline-item a svg { width: 30px; }
     .mob-right {text-align: center}
 }
 @media (max-width: 576px) {
-    .search-bth {top: 6px;}
+    .search-bth {top: 6px; left: -10px;}
     .local-picker-wrapper {width: 70px;}
-    .locale-picker {top: 0px;}
+    .locale-picker {top: 0px; left: 12px;}
     .logo img {width: 190px;}
     #btn-call-back { right: 60px; }
     .breadcrumb a { font-size: 10px; }
