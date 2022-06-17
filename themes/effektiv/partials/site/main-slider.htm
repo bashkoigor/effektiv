@@ -1,6 +1,6 @@
 {% set sliderImages = SiteSettings.get('main_slider') %}
 {% if sliderImages is not empty %}
-<div id="main-carousel" class="carousel slide" data-bs-ride="carousel" >
+<div id="main-carousel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
         {% for sliderImage in sliderImages %}
         <div class="carousel-item {% if loop.first %}active{% endif %}">
