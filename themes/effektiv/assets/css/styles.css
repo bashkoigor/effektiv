@@ -644,7 +644,9 @@ footer .list-inline-item a svg { width: 30px; }
 .main-page .slide-block.full { overflow: hidden; height: 400px; }
 .main-page .slide-block.half { overflow: hidden; height: 300px; }
 .main-page .slide-block.full h1 { font-size: 60px; }
+.main-page .slide-block.full h1 a { color: white; }
 .main-page .slide-block.half h1 { font-size: 26px; }
+.main-page .slide-block.half h1 a { color: white; }
 .main-page .slide-block.full p { font-size: 24px; }
 .main-page .slide-block img { width: 100%; }
 .main-page .slide-block:before {
