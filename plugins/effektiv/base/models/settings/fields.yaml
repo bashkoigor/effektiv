@@ -5,3 +5,21 @@ tabs:
             type: partial
             path: ~/plugins/effektiv/base/views/offer_price_list.htm
             tab: 'Цены'
+        main_slider:
+            tab: 'Слайдер'
+            type: repeater
+            form:
+                fields:
+                    desktop_img:
+                        label: Баннер
+                        type: mediafinder
+                        mode: image
+                        maxItems: 1
+                    mobile_img:
+                        label: Баннер (мобильная версия)
+                        type: mediafinder
+                        mode: image
+                        maxItems: 1
+                    details:
+                        label: Текст
+                        type: richeditor

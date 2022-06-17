@@ -19,4 +19,8 @@ class SiteSettings extends ComponentBase
             'description' => 'SiteSettings component.'
         ];
     }
+
+    public function get($sCode) {
+        return Settings::getValue($sCode);
+    }
 }

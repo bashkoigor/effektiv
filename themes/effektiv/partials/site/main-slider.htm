@@ -1,0 +1,25 @@
+{% set sliderImages = SiteSettings.get('main_slider') %}
+{% if sliderImages is not empty %}
+<div id="main-carousel" class="carousel slide" data-bs-ride="carousel" >
+    <div class="carousel-inner">
+        {% for sliderImage in sliderImages %}
+        <div class="carousel-item {% if loop.first %}active{% endif %}">
+            <picture>
+                <source srcset="{{ sliderImage.desktop_img|media }}" media="(min-width: 480px)" />
+                <source srcset="{{ sliderImage.mobile_img|media }}" media="(min-width: 320px)" />
+                <img src="{{ 'sliderImage.desktop_img'|media }}" />
+            </picture>
+            {{ sliderImage.details|raw }}
+        </div>
+        {% endfor %}
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#main-carousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#main-carousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+{% endif %}
