@@ -1,0 +1,23 @@
+{% set obCategoryList = CategoryList.make().tree() %}
+<div class="modal fade" id="search-modal" tabindex="-1" aria-labelledby="search-modal" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+            <div id="search-content">
+                <i class="fa-solid fa-xmark" data-bs-dismiss="modal"></i>
+                <div class="container search">
+                    <div class="row">
+                        <div class="logo col-xl-12">
+                            <img src="{{ 'logo/Effektiv_Transparent_444x70.png'|media }}" alt="" class="center">
+                        </div>
+                    </div>
+                    <form class="row top-buffer-80" method="get" action="/search">
+                        <div class="input-group mb-3">
+                            <input type="text" name="search" class="form-control" placeholder="{{'Введите ваш запрос'|_}}" aria-label="{{'Введите ваш запрос'|_}}" aria-describedby="button-search">
+                            <button class="btn btn-outline-secondary" type="submit" id="button-search">{{'Найти'|_}}</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

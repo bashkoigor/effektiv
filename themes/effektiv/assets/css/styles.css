@@ -505,7 +505,7 @@ header { background: #1E252B; padding: 20px 0; }
 #menu-title span { text-transform: uppercase; }
 #menu-model .modal-content { background: #F5F5F5; }
 #menu-content { background: #F5F5F5; }
-#menu-content .container {padding: 40px 0; }
+#menu-content .container, .search {padding: 40px 0; }
 @font-face {
     font-family: 'newicons';
     src: url('../font/newicons.eot?12122132');
@@ -552,7 +552,7 @@ header { background: #1E252B; padding: 20px 0; }
 #menu-content ul.item > li { margin-bottom: 30px; }
 #menu-content ul.item > li:first-child { margin-bottom: 10px; }
 #menu-content ul.item ul li { margin-bottom: 20px; }
-#menu-content .fa-xmark {
+#menu-content, #search-content .fa-xmark {
     position: absolute;
     right: 0px;
     padding: 20px;
@@ -813,6 +813,11 @@ footer .list-inline-item a svg { width: 30px; }
 .search-bth {position: absolute; top: 9px; cursor: pointer;}
 .search-bth:hover {color: #CC1F4A;}
 .slider-fix-1 {width: 456px!important;} /* TODO: find a better solution */
+#search-modal .modal-content { background: #F5F5F5; }
+.search-wrapper .card-title { text-align: center; }
+.search-wrapper .card { box-shadow: -4px 10px 14px 0px rgb(0 0 0 / 50%); border: none; }
+.search-wrapper a { color: black; }
+.search-wrapper a:hover { background-color: rgba(192,192,192, 0.1); }
 @media (max-width: 1200px) {
     .btn-quick-order, .btn-add-to-cart { margin-bottom: 20px; }
     .product-page .product-list .item .order-btn { width: 170px; margin: 40px auto 0; }
