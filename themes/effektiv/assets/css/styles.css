@@ -552,7 +552,7 @@ header { background: #1E252B; padding: 20px 0; }
 #menu-content ul.item > li { margin-bottom: 30px; }
 #menu-content ul.item > li:first-child { margin-bottom: 10px; }
 #menu-content ul.item ul li { margin-bottom: 20px; }
-#menu-content, #search-content .fa-xmark {
+#menu-content .fa-xmark, #search-content .fa-xmark {
     position: absolute;
     right: 0px;
     padding: 20px;
