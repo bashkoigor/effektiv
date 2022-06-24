@@ -1,5 +1,4 @@
 {# Get search string #}
-{# set sSearch = input('search') #}
 {% set sSearch = input('search') %}
 
 {# Get product collection #}
@@ -30,7 +29,7 @@
         </div>
         {% endfor %}
     </div>
-    {% partial 'pagination/pagination' iCount=iCount iPage=iPage %}
+    {% partial 'pagination/search' iCount=iCount iPage=iPage sSearch=sSearch %}
     {% else %}
     <div class="h-100 d-flex align-items-center justify-content-center">
         <h6 class="my-5">{{ 'По вашему запросу ничего не найдено.'|_ }}</h6>
