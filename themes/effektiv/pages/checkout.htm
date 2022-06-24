@@ -13,6 +13,17 @@ function onInit() {
     $this->addJs('assets/js/checkout.js');
 }
 ==
+{% if arCartData.shipping_type_id is null %}
+    {% set shippingTypeId = 1 %}
+{% else %}
+    {% set shippingTypeId = arCartData.shipping_type_id %}
+{% endif %}
+
+{% if arCartData.payment_method_id is null %}
+    {% set paymentMethodId = 1 %}
+{% else %}
+    {% set shippingTypeId = arCartData.payment_method_id %}
+{% endif %}
 <!-- Сheckout page -->
 <div class="checkout-page my-5">
     <div class="container">
@@ -50,8 +61,8 @@ function onInit() {
                         <label for="validationCustom06" class="form-label">{{ 'Примечание к заказу'|_ }}</label>
                         <textarea class="form-control" id="validationCustom06" name="comment" data-group="order.property"></textarea>
                     </div>
-                    <input type="hidden" class="form-control" name="shipping_type_id" value="{{ arCartData.shipping_type_id }}" data-group="order">
-                    <input type="hidden" class="form-control" name="payment_method_id" value="{{ arCartData.payment_method_id }}" data-group="order">
+                    <input type="hidden" class="form-control" name="shipping_type_id" value="{{ shippingTypeId }}" data-group="order">
+                    <input type="hidden" class="form-control" name="payment_method_id" value="{{ paymentMethodId }}" data-group="order">
                     <input type="hidden" class="form-control" name="cdek_price" value="{{ arCartData.property.cdek_price }}" data-group="order">
                     <input type="hidden" class="form-control" name="cdek_info" value="{{ arCartData.property.cdek_info }}" data-group="order">
                     <div class="col-12">
