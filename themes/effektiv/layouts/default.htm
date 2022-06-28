@@ -9,6 +9,8 @@ forceUrl = 1
 
 [SendMail]
 [SiteSettings]
+
+[UserData]
 ==
 function onInit() {
 
@@ -29,6 +31,9 @@ function onInit() {
     $arCartData = $this->Cart->onGetCartData();
     $this['arCartData'] = $arCartData['data'];
 
+
+    /* User data */
+    $this['obUser'] = $this->UserData->get();
 }
 ==
 <!doctype html>

@@ -5,6 +5,12 @@
                 <li><a href="">О Нас</a></li>
                 <li><a href="">История бренда</a></li>
                 <li><a href="">Почему мы?</a></li>
+                {% if obUser.isNotEmpty %}
+                <li><a href="{{ 'user/orders'|page }}">{{ 'Личный кабинет'|_ }}</a></li>
+                <li><a class="link" href="{{ 'user/logout'|page }}">{{ 'Выйти'|_ }}</a></li>
+                {% else %}
+                <li><a href="{{ 'user/login'|page }}">{{ 'Войти'|_ }}</a></li>
+                {% endif %}
             </ul>
         </div>
         <div class="col-md">

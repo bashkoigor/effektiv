@@ -23,6 +23,20 @@
                         {{ 'Контакты'|_ }}
                     </a>
                 </li>
+                <li>
+                    {% if obUser.isNotEmpty %}
+                    <a class="link {{ activeNavLink == 'user-orders' ? 'active' }}" href="{{ 'user/orders'|page }}">
+                        {{ 'Личный кабинет'|_ }}
+                    </a>
+                    <a class="link" href="{{ 'user/logout'|page }}">
+                        {{ 'Выйти'|_ }}
+                    </a>
+                    {% else %}
+                    <a class="link {{ activeNavLink == 'user-login' ? 'active' }}" href="{{ 'user/login'|page }}">
+                        {{ 'Войти'|_ }}
+                    </a>
+                    {% endif %}
+                </li>
             </ul>
         </div>
     </div>
