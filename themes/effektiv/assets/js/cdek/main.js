@@ -10,6 +10,7 @@ $(document).on('click', '.openCdekModal', (e) => {
         });
     }
     //console.log(widjet.cargo.get());
+    $("#cdek-spinner").removeClass( "d-none" ).addClass( "d-inline-block" );
     widjet.open();
 });
 
@@ -46,6 +47,7 @@ var widjet = new ISDEKWidjet({
 });
 
 function onReady(wat) {
+    $("#cdek-spinner").removeClass( "d-inline-block" ).addClass( "d-none" );
     //console.log('Виджет загружен');
     //console.log(widjet.city.get());
 }
@@ -57,7 +59,7 @@ function onChoose(wat) {
                     'город ' + wat.cityName;
     let data = {
         'property': {
-            'cdek_info': cdek_info, 
+            'cdek_info': cdek_info,
             'cdek_price': wat.price
         }
     };
@@ -70,11 +72,11 @@ function onChoose(wat) {
     });
 
     setTimeout(function () {
-        location.reload();            
+        location.reload();
     }, 1000);
 
     //widjet.cargo.reset();
-    
+
 }
 
 function onChooseProfile(wat) {
@@ -84,7 +86,7 @@ function onChooseProfile(wat) {
 
     let data = {
         'property': {
-            'cdek_info': cdek_info, 
+            'cdek_info': cdek_info,
             'cdek_price': wat.price
         }
     };
@@ -102,18 +104,18 @@ function onProductProperties() {
     var j = 0;
     var productProperties = [];
     $(".cartData > tbody > tr").each(function () {
-        
+
         var quantity = $(this).find('input[name="quantity"]').val();
         for (var i = 0; i < quantity; i++) {
-            productProperties[j] = { 
-                length: $(this).find('input[name="length"]').val(), 
-                width: $(this).find('input[name="width"]').val(), 
-                height: $(this).find('input[name="height"]').val(), 
-                weight: $(this).find('input[name="weight"]').val() 
+            productProperties[j] = {
+                length: $(this).find('input[name="length"]').val(),
+                width: $(this).find('input[name="width"]').val(),
+                height: $(this).find('input[name="height"]').val(),
+                weight: $(this).find('input[name="weight"]').val()
             };
             j++;
         }
-        
+
     });
     return productProperties;
 }

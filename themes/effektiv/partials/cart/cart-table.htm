@@ -75,17 +75,20 @@
                         <fieldset class="form-group">
                             {% for obShippingType in obShippingTypeList %}
                                 <div class="form-check{% if not loop.first %} mt-2{% endif %}">
-                                    <input class="form-check-input" type="radio" name="shipping_type_id" id="sipping-type-{{ obShippingType.id }}" value="{{ obShippingType.id }}" 
+                                    <input class="form-check-input" type="radio" name="shipping_type_id" id="sipping-type-{{ obShippingType.id }}" value="{{ obShippingType.id }}"
                                     {% if obShippingType.id == arCartData.shipping_type_id %}
                                         checked
                                     {% elseif obShippingType.id == 1 %} {# Set default #}
                                         checked
                                     {% endif %}>
                                     <label class="form-check-label" for="sipping-type-{{ obShippingType.id }}">
-                                        {{ obShippingType.name }} 
+                                        {{ obShippingType.name }}
                                     </label>
                                     {% if obShippingType.id == cdekShippingTypeId %}
                                         <a href='javascript:void(0);' class="openCdekModal {% if obShippingType.id == arCartData.shipping_type_id %}d-inline-block{%else%}d-none{% endif %}">{{ 'Показать ПВЗ'|_ }}</a>
+                                        <div class="spinner-grow spinner-grow-sm d-none" id="cdek-spinner" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
                                     {% endif %}
                                 </div>
                             {% endfor %}
@@ -100,14 +103,14 @@
                         <fieldset class="form-group">
                             {% for obPaymentMethod in obPaymentMethodList %}
                                 <div class="form-check{% if not loop.first %} mt-2{% endif %}">
-                                    <input class="form-check-input" type="radio" name="payment_method_id" id="payment-method-{{ obPaymentMethod.id }}" value="{{ obPaymentMethod.id }}" 
+                                    <input class="form-check-input" type="radio" name="payment_method_id" id="payment-method-{{ obPaymentMethod.id }}" value="{{ obPaymentMethod.id }}"
                                     {% if obPaymentMethod.id == arCartData.payment_method_id %}
                                         checked
                                     {% elseif obPaymentMethod.id == 1 %} {# Set default #}
                                         checked
                                     {% endif %}>
                                     <label class="form-check-label" for="payment-method-{{ obPaymentMethod.id }}">
-                                        {{ obPaymentMethod.name }} 
+                                        {{ obPaymentMethod.name }}
                                     </label>
                                 </div>
                             {% endfor %}
