@@ -2,17 +2,17 @@
 {% set obCartPositionList = Cart.get() %}
 
 {% if obCartPositionList.isNotEmpty() %}
+<form action="">
     <div class="table-responsive">
-    <form action="">
         <table class="table table-bordered cartData">
             <thead>
             <tr>
-                <th scope="col"></th>
-                <th scope="col"></th>
-                <th scope="col">{{ 'Товар'|_ }}</th>
-                <th scope="col">{{ 'Цена'|_ }}</th>
-                <th scope="col">{{ 'Количество'|_ }}</th>
-                <th scope="col">{{ 'Подытог'|_ }}</th>
+                <th scope="col-xl-1"></th>
+                <th scope="col-xl-2"></th>
+                <th scope="col-xl-4">{{ 'Товар'|_ }}</th>
+                <th scope="col-xl-2">{{ 'Цена'|_ }}</th>
+                <th scope="col-xl-2">{{ 'Количество'|_ }}</th>
+                <th scope="col-xl-2">{{ 'Подытог'|_ }}</th>
             </tr>
             </thead>
             <tbody>
@@ -64,97 +64,95 @@
             </tr>
             </tfoot>
         </table>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 mt-4">
-                    {# Get shipping type list #}
-                    {% set obShippingTypeList = ShippingTypeList.make().sort().active() %}
-                    {% if obShippingTypeList.isNotEmpty() %}
-                        <h4>{{ 'Выберите способ доставки'|_ }}</h4>
-                        <fieldset class="form-group">
-                            {% for obShippingType in obShippingTypeList %}
-                                <div class="form-check{% if not loop.first %} mt-2{% endif %}">
-                                    <input class="form-check-input" type="radio" name="shipping_type_id" id="sipping-type-{{ obShippingType.id }}" value="{{ obShippingType.id }}"
-                                    {% if obShippingType.id == arCartData.shipping_type_id %}
-                                        checked
-                                    {% elseif obShippingType.id == 1 %} {# Set default #}
-                                        checked
-                                    {% endif %}>
-                                    <label class="form-check-label" for="sipping-type-{{ obShippingType.id }}">
-                                        {{ obShippingType.name }}
-                                    </label>
-                                    {% if obShippingType.id == cdekShippingTypeId %}
-                                        <a href='javascript:void(0);' class="openCdekModal {% if obShippingType.id == arCartData.shipping_type_id %}d-inline-block{%else%}d-none{% endif %}">{{ 'Показать ПВЗ'|_ }}</a>
-                                        <div class="spinner-grow spinner-grow-sm d-none" id="cdek-spinner" role="status">
-                                            <span class="visually-hidden">Loading...</span>
-                                        </div>
-                                    {% endif %}
-                                </div>
-                            {% endfor %}
-                        </fieldset>
-                    {% endif %}
-                </div>
-                <div class="col-lg-6 mt-4">
-                    {# Get payment method list #}
-                    {% set obPaymentMethodList = PaymentMethodList.make().sort().active() %}
-                    {% if obPaymentMethodList.isNotEmpty() %}
-                        <h4>{{ 'Выберите способ оплаты'|_ }}</h4>
-                        <fieldset class="form-group">
-                            {% for obPaymentMethod in obPaymentMethodList %}
-                                <div class="form-check{% if not loop.first %} mt-2{% endif %}">
-                                    <input class="form-check-input" type="radio" name="payment_method_id" id="payment-method-{{ obPaymentMethod.id }}" value="{{ obPaymentMethod.id }}"
-                                    {% if obPaymentMethod.id == arCartData.payment_method_id %}
-                                        checked
-                                    {% elseif obPaymentMethod.id == 1 %} {# Set default #}
-                                        checked
-                                    {% endif %}>
-                                    <label class="form-check-label" for="payment-method-{{ obPaymentMethod.id }}">
-                                        {{ obPaymentMethod.name }}
-                                    </label>
-                                </div>
-                            {% endfor %}
-                        </fieldset>
-                    {% endif %}
-                </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 mt-4">
+                {# Get shipping type list #}
+                {% set obShippingTypeList = ShippingTypeList.make().sort().active() %}
+                {% if obShippingTypeList.isNotEmpty() %}
+                    <h4>{{ 'Выберите способ доставки'|_ }}</h4>
+                    <fieldset class="form-group">
+                        {% for obShippingType in obShippingTypeList %}
+                            <div class="form-check{% if not loop.first %} mt-2{% endif %}">
+                                <input class="form-check-input" type="radio" name="shipping_type_id" id="sipping-type-{{ obShippingType.id }}" value="{{ obShippingType.id }}"
+                                {% if obShippingType.id == arCartData.shipping_type_id %}
+                                    checked
+                                {% elseif obShippingType.id == 1 %} {# Set default #}
+                                    checked
+                                {% endif %}>
+                                <label class="form-check-label" for="sipping-type-{{ obShippingType.id }}">
+                                    {{ obShippingType.name }}
+                                </label>
+                                {% if obShippingType.id == cdekShippingTypeId %}
+                                    <a href='javascript:void(0);' class="openCdekModal {% if obShippingType.id == arCartData.shipping_type_id %}d-inline-block{%else%}d-none{% endif %}">{{ 'Показать ПВЗ'|_ }}</a>
+                                    <div class="spinner-grow spinner-grow-sm d-none" id="cdek-spinner" role="status">
+                                        <span class="visually-hidden">Loading...</span>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                    </fieldset>
+                {% endif %}
+            </div>
+            <div class="col-lg-6 mt-4">
+                {# Get payment method list #}
+                {% set obPaymentMethodList = PaymentMethodList.make().sort().active() %}
+                {% if obPaymentMethodList.isNotEmpty() %}
+                    <h4>{{ 'Выберите способ оплаты'|_ }}</h4>
+                    <fieldset class="form-group">
+                        {% for obPaymentMethod in obPaymentMethodList %}
+                            <div class="form-check{% if not loop.first %} mt-2{% endif %}">
+                                <input class="form-check-input" type="radio" name="payment_method_id" id="payment-method-{{ obPaymentMethod.id }}" value="{{ obPaymentMethod.id }}"
+                                {% if obPaymentMethod.id == arCartData.payment_method_id %}
+                                    checked
+                                {% elseif obPaymentMethod.id == 1 %} {# Set default #}
+                                    checked
+                                {% endif %}>
+                                <label class="form-check-label" for="payment-method-{{ obPaymentMethod.id }}">
+                                    {{ obPaymentMethod.name }}
+                                </label>
+                            </div>
+                        {% endfor %}
+                    </fieldset>
+                {% endif %}
             </div>
         </div>
-
-        <div class="result mt-5">
-            <h4 class="mb-4">{{ 'Сумма заказов'|_ }}</h4>
-            <table class="table table-bordered">
-                <tbody>
-                <tr class="delivery_info">
-                    {% if arCartData.shipping_type_id == cdekShippingTypeId and arCartData.property.cdek_price is not empty %}
-                        <th>{{ 'Доставка'|_ }}</th>
-                        <td>{{ obCartPositionList.getCurrency() }} {{ arCartData.property.cdek_price|number_format(0, '', ' ') }}</td>
-                    {% endif %}
-                </tr>
-                <tr>
-                    <th>{{ 'Заказ'|_ }}</th>
-                    <td>{{ obCartPositionList.getCurrency() }} {{ obCartPositionList.getTotalPrice() }}</td>
-                </tr>
-                <tr>
-                    <th>{{ 'Итого'|_ }}</th>
-                    <td>
-                        <strong>
-                            {{ obCartPositionList.getCurrency() }}
-                            <span class="total-price">
-                                {% if arCartData.shipping_type_id == cdekShippingTypeId and arCartData.property.cdek_price is not empty %}
-                                    {{ (obCartPositionList.getTotalPriceValue() + arCartData.property.cdek_price)|number_format(0, '', ' ') }}
-                                {% else %}
-                                    {{ obCartPositionList.getTotalPrice() }}
-                                {% endif %}
-                            </span>
-                        </strong>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-            <a href="{{ 'checkout'|page }}" class="btn main-btn my-4">{{ 'Оформить заказ'|_ }}</a>
-        </div>
-    </form>
-</div>
+    </div>
+    <div class="result mt-5">
+        <h4 class="mb-4">{{ 'Сумма заказов'|_ }}</h4>
+        <table class="table table-bordered">
+            <tbody>
+            <tr class="delivery_info">
+                {% if arCartData.shipping_type_id == cdekShippingTypeId and arCartData.property.cdek_price is not empty %}
+                    <th>{{ 'Доставка'|_ }}</th>
+                    <td>{{ obCartPositionList.getCurrency() }} {{ arCartData.property.cdek_price|number_format(0, '', ' ') }}</td>
+                {% endif %}
+            </tr>
+            <tr>
+                <th>{{ 'Заказ'|_ }}</th>
+                <td>{{ obCartPositionList.getCurrency() }} {{ obCartPositionList.getTotalPrice() }}</td>
+            </tr>
+            <tr>
+                <th>{{ 'Итого'|_ }}</th>
+                <td>
+                    <strong>
+                        {{ obCartPositionList.getCurrency() }}
+                        <span class="total-price">
+                            {% if arCartData.shipping_type_id == cdekShippingTypeId and arCartData.property.cdek_price is not empty %}
+                                {{ (obCartPositionList.getTotalPriceValue() + arCartData.property.cdek_price)|number_format(0, '', ' ') }}
+                            {% else %}
+                                {{ obCartPositionList.getTotalPrice() }}
+                            {% endif %}
+                        </span>
+                    </strong>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <a href="{{ 'checkout'|page }}" class="btn main-btn my-4">{{ 'Оформить заказ'|_ }}</a>
+    </div>
+</form>
 {% else %}
     {{ 'Корзина пуста'|_ }}
 {% endif %}
