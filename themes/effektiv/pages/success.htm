@@ -38,6 +38,14 @@ function onStart()
                 <h3>{{ 'Заказа создан'|_ }}</h3>
                 <div data-id="{{ obOrder.id }}">
                     <p>{{ 'Номер заказа'|_ }}: <b>{{ obOrder.order_number }}</b></p>
+                    {% for obOrderPosition in obOrder.order_position %}
+                    {% set obOffer = obOrderPosition.item %}
+                    {% set obProduct = obOffer.product %}
+                    <div><b>{{ obProduct.name }}</b>, {{ obOrderPosition.quantity }}шт., {{ obOrderPosition.price }} {{ obOrderPosition.currency_symbol }}</div>
+                    <div>{{obOrder.payment_method.name}}</div>
+                    <div>{{obOrder.shipping_type.name}}</div>
+                    <div>{{obOrder.property.comment}}</div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
