@@ -103,7 +103,7 @@ function onCalculate(wat) {
 function onProductProperties() {
     var j = 0;
     var productProperties = [];
-    $(".cartData > tbody > tr").each(function () {
+    $(".cartData > li").each(function () {
 
         var quantity = $(this).find('input[name="quantity"]').val();
         for (var i = 0; i < quantity; i++) {

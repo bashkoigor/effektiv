@@ -1,5 +1,17 @@
+// Decrease, increase product amount
+$(document).on('click', '.product-amount-increase', (e) => {
+    let x = $( e.currentTarget ).siblings(".product-amount input").val();
+    $( e.currentTarget ).siblings(".product-amount input").attr('value', ++x);
+});
+$(document).on('click', '.product-amount-decrease', (e) => {
+    let x = $( e.currentTarget ).siblings(".product-amount input").val();
+    if (x > 1) {
+        $( e.currentTarget ).siblings(".product-amount input").attr('value', --x);
+    }
+});
+
 // Event update quantity in cart
-$(document).on('change', '.cart-quantity', (e) => {
+$(document).on('click', '.product-amount-increase, .product-amount-decrease', (e) => {
     const button = $(e.currentTarget),
         form = button.parents('.product-wrapper');
 
@@ -21,7 +33,7 @@ $(document).on('change', '.cart-quantity', (e) => {
             'update': {'cart/cart-table': '.cart-table-wrapper','cart/header-cart-info': '.header-cart-wrapper'},
         });
         // Remove delivery info
-        resetDeliveryInfo();   
+        resetDeliveryInfo();
     }, 500);
 
 });
@@ -78,7 +90,7 @@ $(document).on('click', '.cart-remove', (e) => {
             'update': {'cart/cart-table': '.cart-table-wrapper', 'cart/header-cart-info': '.header-cart-wrapper'},
         });
         // Remove delivery info
-        resetDeliveryInfo();   
+        resetDeliveryInfo();
     }, 500);
 
 });

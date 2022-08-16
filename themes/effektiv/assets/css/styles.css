@@ -709,8 +709,6 @@ footer .list-inline-item a svg { width: 30px; }
 .cart-page table img { width: 20%; }
 .cart-page table tfoot { text-align: right; }
 .cart-page table input { width: 50%; }
-.cart-page table .cart-del { cursor: pointer; }
-.cart-page table .cart-del:hover { color: #cd1f4b; }
 .cart-page .result { width: 50%; margin: 0 auto; }
 .cart-page .order-btn { color: white; background: #CD1F4B; display: block; margin: 0 auto; }
 .cart-page .order-btn:hover { background: #e6003d; }
@@ -722,6 +720,44 @@ footer .list-inline-item a svg { width: 30px; }
     cursor: pointer;
     display: inline-block;
 }
+
+.cart-items { list-style: none;padding: 0; margin-bottom: 30px; }
+.cart-title { padding: 16px 0; border-top: 1px solid #e9e9e9; border-bottom: 1px solid #e9e9e9; font-weight: 500;}
+.cart-items .cart-item { border-bottom: 1px solid #e9e9e9; padding: 19px 0; margin-bottom: 20px;}
+.cart-item img {max-width: 100px;}
+.cart-del { cursor: pointer; }
+.cart-del:hover { color: #cd1f4b; }
+.product-amount {
+    flex-shrink: 0;
+    display: inline-flex;
+    vertical-align: top;
+    margin-right: 15px;
+}
+.product-amount-number {
+    max-width: 40px;
+    border-top: 1px solid #ebebeb;
+    border-bottom: 1px solid #ebebeb;
+    border-left: transparent;
+    border-right: transparent;
+    text-align: center;
+}
+.product-amount-decrease, .product-amount-increase {
+    padding: 4px 6px;
+}
+.product-amount-decrease {
+    border-radius: 4px 0 0 4px;
+}
+.product-amount-increase {
+    border-radius: 0 4px 4px 0;
+}
+.product-amount-decrease, .product-amount-increase {
+    border: 1px solid #ebebeb;
+    text-align: center;
+    background: white;
+    padding: 8px;
+}
+
+
 .page .widget-container {
     margin: 0 0 30px 12px;
     padding: 0px 0px 0px 40px;
@@ -831,6 +867,7 @@ footer .list-inline-item a svg { width: 30px; }
     .mob-right {text-align: center}
 }
 @media (max-width: 576px) {
+    .cart-page .result { width: 100%; }
     .slider-fix-1 {width: 250px!important;}
     .search-bth {top: 4px; left: -20px;}
     .local-picker-wrapper {width: 70px;}

@@ -3,68 +3,63 @@
 
 {% if obCartPositionList.isNotEmpty() %}
 <form action="">
-    <div class="table-responsive">
-        <table class="table table-bordered cartData">
-            <thead>
-            <tr>
-                <th scope="col-xl-1"></th>
-                <th scope="col-xl-2"></th>
-                <th scope="col-xl-4">{{ 'Товар'|_ }}</th>
-                <th scope="col-xl-2">{{ 'Цена'|_ }}</th>
-                <th scope="col-xl-2">{{ 'Количество'|_ }}</th>
-                <th scope="col-xl-2">{{ 'Подытог'|_ }}</th>
-            </tr>
-            </thead>
-            <tbody>
 
-            {% for obCartPosition in obCartPositionList %}
-
-                {% set obOffer = obCartPosition.item %}
-                {% set obProduct = obOffer.product %}
-
-                <tr class="product-wrapper" data-position-id="{{ obCartPosition.id }}">
-                    <th scope="row">
-                        <div class="cart-del cart-remove">
-                            <i class="fa-solid fa-xmark"></i>
-                        </div>
-                    </th>
-                    <td>
-                        <img src="{{ obProduct.preview_image.path }}" alt="{{ obProduct.preview_image.description }}" title="{{ obProduct.preview_image.title }}" itemprop="image">
-                    </td>
-                    <td>
-                        <a href="{{ obProduct.getPageUrl('product') }}">{{ obProduct.name }}</a>
-                    </td>
-                    <td>{{ obOffer.currency }} {{ obOffer.price }}</td>
-                    <td>
-                        <input type="hidden" name="weight" value="{{ obOffer.weight }}">
-                        <input type="hidden" name="height" value="{{ obOffer.height }}">
-                        <input type="hidden" name="length" value="{{ obOffer.length }}">
-                        <input type="hidden" name="width" value="{{ obOffer.width }}">
-
-                        <input type="hidden" name="offer_id" value="{{ obOffer.id }}">
-                        <input type="text" name="quantity" class="form-control cart-quantity" value="{{ obCartPosition.quantity }}">
-                    </td>
-                    <td>
-                        <span>{{ obOffer.currency }} </span>
-                        <span data-group="position" data-field="price_without_tax">
-                            {{ obCartPosition.price_without_tax }}
-                        </span>
-                    </td>
-                </tr>
-
-            {% endfor %}
-            </tbody>
-            <tfoot>
-            <tr>
-                <td colspan="6">
-                    <a href="javascript:window.location.reload()" id="cart-sync">
-                        <i class="fa-solid fa-sync"></i>
-                    </a>
-                </td>
-            </tr>
-            </tfoot>
-        </table>
+    <div class="cart-title d-md-block d-none">
+        <div class="row">
+            <div class="col-7">{{ 'Товар'|_ }}</div>
+            <div class="col-1">{{ 'Цена'|_ }}</div>
+            <div class="col-2 d-flex justify-content-md-center justify-content-end">{{ 'Количество'|_ }}</div>
+            <div class="col-1">{{ 'Подытог'|_ }}</div>
+            <div class="col-1"></div>
+        </div>
     </div>
+    <ul class="cart-items cartData">
+        {% for obCartPosition in obCartPositionList %}
+        {% set obOffer = obCartPosition.item %}
+        {% set obProduct = obOffer.product %}
+        <li class="cart-item product-wrapper" data-position-id="{{ obCartPosition.id }}">
+            <input type="hidden" name="offer_id" value="{{ obOffer.id }}">
+            <input type="hidden" name="weight" value="{{ obOffer.weight }}">
+            <input type="hidden" name="height" value="{{ obOffer.height }}">
+            <input type="hidden" name="length" value="{{ obOffer.length }}">
+            <input type="hidden" name="width" value="{{ obOffer.width }}">
+            <div class="row align-items-center gx-3">
+                <div class="col-4 col-md-1 mb-md-0 mb-3">
+                    {% if obOffer.preview_image is not empty %}
+                    <img class="img-fluid" src="{{ obOffer.preview_image.path }}" alt="{{ obOffer.preview_image.description }}" title="{{ obOffer.preview_image.title }}">
+                    {% elseif obProduct.preview_image is not empty %}
+                    <img class="img-fluid" src="{{ obProduct.preview_image.path }}" alt="{{ obProduct.preview_image.description }}" title="{{ obProduct.preview_image.title }}">
+                    {% endif %}
+                </div>
+                <div class="col-8 col-md-6 mb-md-0 mb-3">
+                    <a class="label" href="{{ obProduct.getPageUrl('product') }}">
+                        {{ obProduct.name }}
+                    </a>
+                </div>
+                <div class="col-8 col-md-1">
+                    <span class="d-inline-block d-md-none">{{ 'Цена'|_ }}: </span>
+                    <span class="price">{{ obOffer.price }} {{ obOffer.currency }}</span>
+                </div>
+                <div class="col-4 col-md-2 d-flex justify-content-md-center justify-content-end">
+                    <div class="product-amount">
+                        <button type="button" class="product-amount-decrease">-</button>
+                        <input type="number" class="product-amount-number" name="quantity" value="{{ obCartPosition.quantity }}" min="1" max="9">
+                        <button type="button" class="product-amount-increase">+</button>
+                    </div>
+                </div>
+                <div class="col-12 col-md-1">
+                    <span class="d-inline-block d-md-none">{{ 'Подытог'|_ }}: </span>
+                    <span class="total-price">{{ obCartPosition.price_without_tax }} {{ obOffer.currency }}</span>
+                </div>
+                <div class="col-12 col-md-1 d-flex justify-content-end">
+                    <div class="cart-del cart-remove">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
     <div class="container">
         <div class="row">
             <div class="col-lg-6 mt-4">
