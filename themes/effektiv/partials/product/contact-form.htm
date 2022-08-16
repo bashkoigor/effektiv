@@ -13,6 +13,7 @@
         </div>
         <div class="col-sm-7">
             <form class="contact-form-needs-validation" novalidate>
+                <input type="hidden" name="product" value="{{ obProduct.name }}">
                 <div class="mb-3">
                     <label for="validationContactFormName" class="form-label">{{ 'Ваше Имя'|_ }}</label>
                     <input type="text" class="form-control" id="validationContactFormName" name="first_name" required>
@@ -38,7 +39,11 @@
                     <label for="message" class="form-label">{{ 'Сообщение'|_ }}</label>
                     <textarea class="form-control" id="message" rows="3" name="message"></textarea>
                 </div>
-                <button type="submit" class="btn btn-send-form">{{ 'Отправить'|_ }}</button>
+                <button type="submit" class="btn btn-send-form">{{ 'Отправить'|_ }}
+                    <div class="spinner-border spinner-border-sm d-none" id="contact-form-spinner" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </button>
             </form>
             <div id="contactFormResult"></div>
         </div>

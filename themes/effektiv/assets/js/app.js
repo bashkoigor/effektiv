@@ -78,18 +78,25 @@ function sendCallBack(name, phone) {
     });
 }
 
-function sendContactForm(name, email, phone, message) {
+function sendContactForm(name, email, phone, message, product) {
     let data = {
         'contactForm': {
             'name': name,
             'email': email,
             'phone': phone,
-            'text': message
+            'text': message,
+            'product': product
         }
     };
     $.request('SendMail::onSendContactForm', {
         'data': data,
-        'update': {'site/contact-form-result': '#contactFormResult'}
+        'update': {'site/contact-form-result': '#contactFormResult'},
+        beforeUpdate: function() {
+            $("#contact-form-spinner").removeClass( "d-none" ).addClass( "d-inline-block" );
+        },
+        afterUpdate: function() {
+            $("#contact-form-spinner").removeClass( "d-inline-block" ).addClass( "d-none" );
+        }
     });
 }
 
@@ -136,7 +143,8 @@ function sendContactForm(name, email, phone, message) {
                     var email = form.querySelector('[name="email"]').value;
                     var phone = form.querySelector('[name="phone"]').value;
                     var message = form.querySelector('[name="message"]').value;
-                    sendContactForm(name, email, phone, message);
+                    var product = form.querySelector('[name="product"]').value;
+                    sendContactForm(name, email, phone, message, product);
                 }
 
                 form.classList.add('was-validated')

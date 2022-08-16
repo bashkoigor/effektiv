@@ -6,6 +6,9 @@ use Input;
 use Cms\Classes\ComponentBase;
 
 class SendMail extends ComponentBase {
+
+    protected $email = 'info@effekt-iv.ru';
+
     /**
      * @return array
      */
@@ -21,7 +24,7 @@ class SendMail extends ComponentBase {
     {
         $vars = (array) Input::get('callBack');
         Mail::send('effektive.sendmail:mail:call_back_form', $vars, function($message) {
-            $message->to('igor.bashko@yandex.ru');
+            $message->to($this->email);
         });
     }
 
@@ -29,7 +32,7 @@ class SendMail extends ComponentBase {
     {
         $vars = (array) Input::get('contactForm');
         Mail::send('effektive.sendmail:mail:contact_form', $vars, function($message) {
-            $message->to('igor.bashko@yandex.ru');
+            $message->to($this->email);
         });
     }
 }
