@@ -867,6 +867,7 @@ footer .list-inline-item a svg { width: 30px; }
     .mob-right {text-align: center}
 }
 @media (max-width: 576px) {
+    .product-page .benefits ul.left li p {word-break: break-all;}
     .cart-page .result { width: 100%; }
     .slider-fix-1 {width: 250px!important;}
     .search-bth {top: 4px; left: -20px;}
