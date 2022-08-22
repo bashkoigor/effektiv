@@ -27,14 +27,14 @@ $(document).on('click', '.btn-quick-order, .btn-add-to-cart', (e) => {
 function addOfferToCart(form, button, data, btnClass) {
 
     if (btnClass == 'btn btn-add-to-cart') {
-        
+
         $.request('Cart::onAdd', {
             'data': data,
             'update': {'cart/header-cart-info': '.header-cart-wrapper'},
         });
 
     } else {
-        
+
         $.request('Cart::onAdd', {
             'data': data,
             'update': {'cart/header-cart-info': '.header-cart-wrapper'},
@@ -60,7 +60,7 @@ function createQuickOrder(name, phone) {
         },
         'user': {
             'name': name,
-            'phone': phone            
+            'phone': phone
         }
     };
 
@@ -145,4 +145,10 @@ if (obInColorCarousel) {
     Fancybox.bind("#in-color-carousel a", {
         caption: function (fancybox, carousel, slide) {},
     });
+}
+
+// Show gallery
+window.onload = function (e) {
+    document.getElementById("product-gallery").classList.remove('invisible-block');
+    document.getElementById("product-gallery").classList.add('visible-block');
 }

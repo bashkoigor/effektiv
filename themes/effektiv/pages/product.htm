@@ -54,7 +54,7 @@ function onInit() {
         <div class="row">
             <!-- Product gallery-->
             <div class="col-lg-8">
-                <div class="gallery">
+                <div class="gallery invisible-block" id="product-gallery">
                     <div id="product-carousel" class="carousel">
                         {% if obProduct.images is not empty %}
                             {% for obImage in obProduct.images %}

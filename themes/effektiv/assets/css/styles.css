@@ -856,6 +856,8 @@ footer .list-inline-item a svg { width: 30px; }
 .search-wrapper a:hover { background-color: rgba(192,192,192, 0.1); }
 .form-signin { width: 100%; max-width: 330px; padding: 15px; margin: auto; }
 .f-right { float: right; }
+.invisible-block {visibility: hidden; opacity: 0;}
+.visible-block {visibility: visible; opacity: 1; transition: visibility 0.5s, opacity 0.5s linear;}
 @media (max-width: 1200px) {
     .btn-quick-order, .btn-add-to-cart { margin-bottom: 20px; }
     .product-page .product-list .item .order-btn { width: 170px; margin: 40px auto 0; }
