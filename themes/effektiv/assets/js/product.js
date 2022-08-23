@@ -2,6 +2,11 @@ $.request('onAjax', {
     //update: { 'product/product-list': '.product-list' }
 });
 
+// Detect mobile
+function detectMob() {
+    return ( ( window.innerWidth <= 800 ) && ( window.innerHeight <= 700 ) );
+}
+
 // Event add product to cart
 $(document).on('click', '.btn-quick-order, .btn-add-to-cart', (e) => {
 
@@ -155,6 +160,7 @@ if (obInColorCarousel) {
 window.onload = function (e) {
     document.getElementById("product-gallery").classList.remove('invisible-block');
     document.getElementById("product-gallery").classList.add('visible-block');
+    galleryCarousel();
 }
 
 // Check is element into view
@@ -200,24 +206,14 @@ let scrollCheck = function () {
         }, 1000);
     }
 
-    let descriptionWrapper = '.description-wrapper';
-    if ($(descriptionWrapper).hasClass('shown') == false && isScrolledIntoView($(descriptionWrapper))) {
-        showPartial('description-block', descriptionWrapper);
-    }
-
-    let productListWrapper = '.product-list-wrapper';
-    if ($(productListWrapper).hasClass('shown') == false && isScrolledIntoView($(productListWrapper))) {
-        showPartial('product-list', productListWrapper);
-    }
-
     let carouselWrapper = '.carousel-wrapper';
-    if ($(carouselWrapper).hasClass('shown') == false && isScrolledIntoView($(carouselWrapper))) {
+    if (isMobile == false && $(carouselWrapper).hasClass('shown') == false && isScrolledIntoView($(carouselWrapper))) {
         showPartial('carousel', carouselWrapper);
         setTimeout(() => {
             galleryCarousel();
             document.getElementById("carousel").classList.remove('invisible-block');
             document.getElementById("carousel").classList.add('visible-block');
-        }, 1000);
+        }, 5000);
     }
 
     let benefitsWrapper = '.benefits-wrapper';
@@ -225,12 +221,27 @@ let scrollCheck = function () {
         showPartial('benefits', benefitsWrapper);
     }
 
+    let videoBlockWrapper = '.video-wrapper';
+    if ($(videoBlockWrapper).hasClass('shown') == false && isScrolledIntoView($(videoBlockWrapper))) {
+        showPartial('video-block', videoBlockWrapper);
+    }
+
+    let descriptionWrapper = '.description-wrapper';
+    if ($(descriptionWrapper).hasClass('shown') == false && isScrolledIntoView($(descriptionWrapper))) {
+        showPartial('description-block', descriptionWrapper);
+    }
+
     let propertyTableWrapper = '.property-table-wrapper';
     if ($(propertyTableWrapper).hasClass('shown') == false && isScrolledIntoView($(propertyTableWrapper))) {
         showPartial('specifications', propertyTableWrapper);
     }
 
+    let productListWrapper = '.product-list-wrapper';
+    if ($(productListWrapper).hasClass('shown') == false && isScrolledIntoView($(productListWrapper))) {
+        showPartial('product-list', productListWrapper);
+    }
 }
+let isMobile = detectMob();
 $(document).on("scroll", scrollCheck);
 
 

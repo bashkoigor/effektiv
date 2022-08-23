@@ -1,23 +1,25 @@
 {% set models_status = obProduct.property.getByCode('product_models_status').property_value.getValueString() %}
 {% if obCategory.id not in arHide and models_status == 'on' %}
-<div class="col-sm-12">
+<div class="row">
+	<div class="col-sm-12">
 
-    {% if obProduct.property.getByCode('product_models').property_value.getValueString() is not empty %}
-    	{{ obProduct.property.getByCode('product_models').property_value.getValueString()|raw }}
-    {% else %}
-        {{obCategory.product_models|raw}}
-    {% endif %}
+		{% if obProduct.property.getByCode('product_models').property_value.getValueString() is not empty %}
+		{{ obProduct.property.getByCode('product_models').property_value.getValueString()|raw }}
+		{% else %}
+		{{obCategory.product_models|raw}}
+		{% endif %}
 
-	<div class="carousel mt-5" id="in-color-carousel">
-		{% for obProduct in obProductList %}
-		    {% set obOffer = obProduct.offer.first() %}
-		    <div class="carousel__slide">
-		        <a data-fancybox="color-carousel" href="{{ obProduct.preview_image.getPath() }}">
-		        	<img src="{{ obProduct.preview_image.getPath() }}" alt="" title="" class="fr-fic fr-dii">
-		        </a>
-		        <p><a href="{{ obProduct.getPageUrl('product') }}" onclick="event.stopPropagation()">{{obProduct.name}}</a></p>
-		    </div>
-		{% endfor %}
+		<div class="carousel mt-5" id="in-color-carousel">
+			{% for obProduct in obProductList %}
+			{% set obOffer = obProduct.offer.first() %}
+			<div class="carousel__slide">
+				<a data-fancybox="color-carousel" href="{{ obProduct.preview_image.getPath() }}">
+					<img src="{{ obProduct.preview_image.getPath() }}" alt="" title="" class="fr-fic fr-dii">
+				</a>
+				<p><a href="{{ obProduct.getPageUrl('product') }}" onclick="event.stopPropagation()">{{obProduct.name}}</a></p>
+			</div>
+			{% endfor %}
+		</div>
 	</div>
 </div>
 {% else %}
