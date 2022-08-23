@@ -177,7 +177,7 @@ function showPartial(partial, wrapperElement) {
     $.request('onAjax', {
         update: { [`product/${partial}`]: wrapperElement }
     });
-    console.log(partial);
+    //console.log(partial);
 }
 
 let scrollCheck = function () {
@@ -215,6 +215,8 @@ let scrollCheck = function () {
         showPartial('carousel', carouselWrapper);
         setTimeout(() => {
             galleryCarousel();
+            document.getElementById("carousel").classList.remove('invisible-block');
+            document.getElementById("carousel").classList.add('visible-block');
         }, 1000);
     }
 
