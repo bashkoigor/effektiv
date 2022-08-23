@@ -97,10 +97,12 @@ function createQuickOrder(name, phone) {
 })()
 
 // Enable tooltips
-var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-    return new bootstrap.Tooltip(tooltipTriggerEl)
-});
+function tooltips() {
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    });
+}
 
 // Product Carousel
 var obProductCarousel = document.querySelector("#product-carousel");
@@ -124,15 +126,17 @@ if (obProductCarousel && obThumbCarousel) {
 }
 
 // Carousel block
-var obGalleryCarousel = document.querySelector("#gallery-carousel");
-if (obGalleryCarousel) {
-    const galleryCarousel = new Carousel(obGalleryCarousel, {
-        slidesPerPage : 1,
-        center : false
-    });
-    Fancybox.bind("#gallery-carousel a", {
-        caption: function (fancybox, carousel, slide) {},
-    });
+function galleryCarousel() {
+    var obGalleryCarousel = document.querySelector("#gallery-carousel");
+    if (obGalleryCarousel) {
+        const galleryCarousel = new Carousel(obGalleryCarousel, {
+            slidesPerPage : 1,
+            center : false
+        });
+        Fancybox.bind("#gallery-carousel a", {
+            caption: function (fancybox, carousel, slide) {},
+        });
+    }
 }
 
 // Other blocks
@@ -152,3 +156,79 @@ window.onload = function (e) {
     document.getElementById("product-gallery").classList.remove('invisible-block');
     document.getElementById("product-gallery").classList.add('visible-block');
 }
+
+// Check is element into view
+function isScrolledIntoView(element)
+{
+    let pageTop = $(window).scrollTop();
+    let pageBottom = pageTop + $(window).height();
+    let elementTop = $(element).offset().top;
+    let elementBottom = elementTop + $(element).height();
+
+    //return ((elementTop <= pageBottom) && (elementBottom >= pageTop));
+    if ((elementTop <= pageBottom) && (elementBottom >= pageTop)) {
+        $(element).addClass( "shown" );
+        return true;
+    }
+}
+
+// Show product page partial, via ajax
+function showPartial(partial, wrapperElement) {
+    $.request('onAjax', {
+        update: { [`product/${partial}`]: wrapperElement }
+    });
+    console.log(partial);
+}
+
+let scrollCheck = function () {
+
+    let benefitWrapper = '.benefit-wrapper';
+    if ($(benefitWrapper).hasClass('shown') == false && isScrolledIntoView($(benefitWrapper))) {
+        showPartial('benefit', benefitWrapper);
+    }
+
+    let bannerWrapper = '.banner-wrapper';
+    if ($(bannerWrapper).hasClass('shown') == false && isScrolledIntoView($(bannerWrapper))) {
+        showPartial('banner', bannerWrapper);
+    }
+
+    let detailWrapper = '.detail-wrapper';
+    if ($(detailWrapper).hasClass('shown') == false && isScrolledIntoView($(detailWrapper))) {
+        showPartial('detail', detailWrapper);
+        setTimeout(() => {
+            tooltips();
+        }, 1000);
+    }
+
+    let descriptionWrapper = '.description-wrapper';
+    if ($(descriptionWrapper).hasClass('shown') == false && isScrolledIntoView($(descriptionWrapper))) {
+        showPartial('description-block', descriptionWrapper);
+    }
+
+    let productListWrapper = '.product-list-wrapper';
+    if ($(productListWrapper).hasClass('shown') == false && isScrolledIntoView($(productListWrapper))) {
+        showPartial('product-list', productListWrapper);
+    }
+
+    let carouselWrapper = '.carousel-wrapper';
+    if ($(carouselWrapper).hasClass('shown') == false && isScrolledIntoView($(carouselWrapper))) {
+        showPartial('carousel', carouselWrapper);
+        setTimeout(() => {
+            galleryCarousel();
+        }, 1000);
+    }
+
+    let benefitsWrapper = '.benefits-wrapper';
+    if ($(benefitsWrapper).hasClass('shown') == false && isScrolledIntoView($(benefitsWrapper))) {
+        showPartial('benefits', benefitsWrapper);
+    }
+
+    let propertyTableWrapper = '.property-table-wrapper';
+    if ($(propertyTableWrapper).hasClass('shown') == false && isScrolledIntoView($(propertyTableWrapper))) {
+        showPartial('specifications', propertyTableWrapper);
+    }
+
+}
+$(document).on("scroll", scrollCheck);
+
+
