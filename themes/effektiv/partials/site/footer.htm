@@ -2,9 +2,9 @@
     <div class="row">
         <div class="col-md">
             <ul>
-                <li><a href="">{{ 'О Нас'|_ }}</a></li>
-                <li><a href="">{{ 'История бренда'|_ }}</a></li>
-                <li><a href="">{{ 'Почему мы?'|_ }}</a></li>
+                <li><a href="{{ 'about'|page }}">{{ 'О Нас'|_ }}</a></li>
+                <li><a href="{{ 'about'|page }}">{{ 'История бренда'|_ }}</a></li>
+                <li><a href="{{ 'about'|page }}#whytochooseus">{{ 'Почему мы?'|_ }}</a></li>
                 {% if obUser.isNotEmpty %}
                 <li><a href="{{ 'user/orders'|page }}">{{ 'Личный кабинет'|_ }}</a></li>
                 <li><a class="link" href="{{ 'user/logout'|page }}">{{ 'Выйти'|_ }}</a></li>
@@ -15,17 +15,17 @@
         </div>
         <div class="col-md">
             <ul>
-                <li><a href="">{{ 'Наше Качество'|_ }}</a></li>
-                <li><a href="">{{ 'Компоненты'|_ }}</a></li>
-                <li><a href="">{{ 'Производственные линии'|_ }}</a></li>
-                <li><a href="">{{ 'Сертификация'|_ }}</a></li>
+                <li><a href="{{ 'nashe-kachestvo'|page }}">{{ 'Наше Качество'|_ }}</a></li>
+                <li><a href="{{ 'nashe-kachestvo'|page }}#components">{{ 'Компоненты'|_ }}</a></li>
+                <li><a href="{{ 'nashe-kachestvo'|page }}#assemblinglines">{{ 'Производственные линии'|_ }}</a></li>
+                <li><a href="{{ 'nashe-kachestvo'|page }}#certification">{{ 'Сертификация'|_ }}</a></li>
             </ul>
         </div>
         <div class="col-md">
             <ul>
-                <li><a href="">{{ 'Поддержка'|_ }}</a></li>
-                <li><a href="">{{ 'Инструкции по эксплуатации'|_ }}</a></li>
-                <li><a href="">{{ 'Сервисные центры'|_ }}</a></li>
+                <li><a href="{{ 'podderzhka'|page }}">{{ 'Поддержка'|_ }}</a></li>
+                <li><a href="{{ 'podderzhka'|page }}">{{ 'Инструкции по эксплуатации'|_ }}</a></li>
+                <li><a href="{{ 'podderzhka'|page }}">{{ 'Сервисные центры'|_ }}</a></li>
             </ul>
         </div>
         <div class="col-md">
@@ -37,11 +37,11 @@
         </div>
         <div class="col-md">
             <ul>
-                <li><a href="">{{ 'Контакты'|_ }}</a></li>
-                <li><a href="">{{ 'Наши офисы'|_ }}</a></li>
-                <li><a href="">{{ 'Наши дистрибьюторы'|_ }}</a></li>
-                <li><a href="">{{ 'Обратная связь'|_ }}</a></li>
-                <li><a href="">{{ 'Партнерская программа'|_ }}</a></li>
+                <li><a href="{{ 'kontakty'|page }}">{{ 'Контакты'|_ }}</a></li>
+                <li><a href="{{ 'kontakty'|page }}#ouroffices">{{ 'Наши офисы'|_ }}</a></li>
+                <li><a href="{{ 'kontakty'|page }}#ourdistributors">{{ 'Наши дистрибьюторы'|_ }}</a></li>
+                <li><a href="{{ 'kontakty'|page }}#contactus">{{ 'Обратная связь'|_ }}</a></li>
+                <li><a href="{{ 'partnerskaya-programma'|page }}">{{ 'Партнерская программа'|_ }}</a></li>
             </ul>
         </div>
     </div>
@@ -49,9 +49,9 @@
         <div class="col-md-10">
             <p>© 2021 «Effektiv App Ltd. Dublin, Ireland». All Rights Reserved.</p>
             <ul class="list-inline">
-                <li class="list-inline-item"><a href="">{{ 'Политика приватности и защиты данных'|_ }}</a></li>
-                <li class="list-inline-item"><a href="">{{ 'Политика куки'|_ }}</a></li>
-                <li class="list-inline-item"><a href="">{{ 'Правовое предупреждение'|_ }}</a></li>
+                <li class="list-inline-item"><a href="{{ 'politika'|page }}">{{ 'Политика приватности и защиты данных'|_ }}</a></li>
+                <li class="list-inline-item"><a href="{{ 'cookie'|page }}">{{ 'Политика куки'|_ }}</a></li>
+                <li class="list-inline-item"><a href="{{ 'pravovoe-preduprezhdenie'|page }}">{{ 'Правовое предупреждение'|_ }}</a></li>
             </ul>
         </div>
         <div class="col-md-2">
