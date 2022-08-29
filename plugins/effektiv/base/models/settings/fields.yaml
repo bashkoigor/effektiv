@@ -8,6 +8,7 @@ tabs:
         main_slider:
             tab: 'Слайдер'
             type: repeater
+            displayMode: builder
             form:
                 fields:
                     desktop_img:
