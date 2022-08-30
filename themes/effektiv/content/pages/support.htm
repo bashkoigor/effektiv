@@ -1,0 +1,59 @@
+<h3>Инструкции по эксплуатации</h3>
+<div class="widget-container">
+    <div class="widget-text">
+        Вы можете найти инструкцию по эксплуатации интересующего Вас продукта, нажав на папку в
+        <br>соответствующей категории
+    </div>
+</div>
+<div class="row my-5">
+    <div class="col-md-4">
+        <b>Для уборки и чистки</b>
+    </div>
+    <div class="col-md-4">
+        <b>Для глажения и отпаривания</b>
+    </div>
+    <div class="col-md-4">
+        <b>Для шитья и вышивания</b>
+    </div>
+</div>
+<h3>Информация о сервисном обслуживании</h3>
+<div class="widget-container">
+    <div class="widget-text">
+        Мы можем направить информацию о сервисном обслуживании по электронной почте.
+        <br>
+        Пожалуйста, заполните форму.
+    </div>
+</div>
+
+<button type="button" class="btn btn-primary w-180 right" data-bs-toggle="modal" data-bs-target="#serviceModal">Заполнить форму</button>
+<div class="modal fade" id="serviceModal" tabindex="-1" aria-labelledby="serviceModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="serviceModalLabel">
+                    Заполните форму и мы отправим Вам информацию о ближайшем сервисном центре на электронную почту.
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="recipient-country" class="col-form-label">СТРАНА:</label>
+                        <input type="text" class="form-control" id="recipient-country">
+                    </div>
+                    <div class="mb-3">
+                        <label for="recipient-city" class="col-form-label">ГОРОД:</label>
+                        <input type="text" class="form-control" id="recipient-city">
+                    </div>
+                    <div class="mb-3">
+                        <label for="recipient-email" class="col-form-label">E-MAIL:</label>
+                        <input type="text" class="form-control" id="recipient-email">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Отправить</button>
+            </div>
+        </div>
+    </div>
+</div>
