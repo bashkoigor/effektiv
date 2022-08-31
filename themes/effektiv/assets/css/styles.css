@@ -768,7 +768,6 @@ footer .list-inline-item a svg { width: 30px; }
     font-size: 24px;
 }
 .page h2 { text-align: center; margin: 40px 0; }
-.page img { width: 1024px; }
 .page h3 { text-transform: initial; margin: 25px 0; }
 .page.about img { width: 20%; float: left; }
 .page.about .block p { font-style: italic; margin-top: 40px; font-size: 20px; }
@@ -859,6 +858,11 @@ footer .list-inline-item a svg { width: 30px; }
 .invisible-block {visibility: hidden; opacity: 0;}
 .visible-block {visibility: visible; opacity: 1; transition: visibility 0.5s, opacity 0.5s linear;}
 #carousel-height {height: 587px;}
+.background-white {background: white;}
+.where-to-buy .shop-list img {-webkit-transition: all 0.7s ease; transition: all 0.7s ease;}
+.where-to-buy .shop-list img:hover {-webkit-transform:scale(0.9); transform:scale(0.9);}
+.font-size-17 {font-size: 17px;}
+.divider-element {width: 60%; border-top: 4px solid #CD1F4B;}
 @media (max-width: 1200px) {
     .btn-quick-order, .btn-add-to-cart { margin-bottom: 20px; }
     .product-page .product-list .item .order-btn { width: 170px; margin: 40px auto 0; }
