@@ -51,7 +51,7 @@ class Breadcrumbs extends ComponentBase
         }
 
         $arBreadcrumbs[] = [
-            'name' => 'Главная',
+            'name' => '<i class="fas fa-home" aria-hidden="true"></i>',
             'url'  => Page::url('index'),
         ];
 
