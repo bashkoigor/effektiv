@@ -80,7 +80,13 @@ function onInit() {
                 <div class="details">
                     <div class="row">
                         <div class="col-lg-12">
-                            <div class="price mb-4">{{ obOffer.currency }} {{ obOffer.price }}</div>
+                            <div class="price mb-4">
+                                {% if obOffer.price == 0 %}
+                                    {{ 'Под заказ'|_ }}
+                                {% else %}
+                                    {{ obOffer.currency }} {{ obOffer.price }}
+                                {% endif %}
+                            </div>
                             <div class="order-btn mb-4">
                                 <button type="button" class="btn btn-quick-order">
                                     {{ 'Быстрый заказ'|_ }}
