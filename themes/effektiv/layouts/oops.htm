@@ -1,0 +1,13 @@
+description = "Under Construction"
+==
+<!doctype html>
+<html lang="en">
+<head>
+    {% partial 'site/meta' %}
+
+    <title>{{ placeholder('pageTitle') ?: (this.page.meta_title ?: this.page.title) }} - Effektiv</title>
+</head>
+<body>
+{% page %}
+</body>
+</html>
