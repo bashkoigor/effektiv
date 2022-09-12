@@ -33,8 +33,8 @@ class Subscriber extends Model
         'email' => 'required|email',
         'country' => 'required|max:16',
         'city' => 'required|max:16',
-        'zip_code' => 'required|max:16',
         'street' => 'required|max:16',
+        'zip_code' => 'required|max:16',
         'house' => 'required|numeric',
         'apartment' => 'numeric',
     ];
@@ -48,8 +48,8 @@ class Subscriber extends Model
         'email'     => 'effektiv.main::lang.validation.email',
         'country'   => 'effektiv.main::lang.validation.country',
         'city'      => 'effektiv.main::lang.validation.city',
-        'zip_code'  => 'effektiv.main::lang.validation.zip_code',
         'street'    => 'effektiv.main::lang.validation.street',
+        'zip_code'  => 'effektiv.main::lang.validation.zip_code',
         'house'     => 'effektiv.main::lang.validation.house',
         'apartment' => 'effektiv.main::lang.validation.apartment',
     ];

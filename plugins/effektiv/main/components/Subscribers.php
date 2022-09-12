@@ -57,14 +57,15 @@ class Subscribers extends ComponentBase
         $success = $item->save();
 
         if ($success === true) {
-            Flash::success( Lang::get('effektiv.main::lang.validation.success') );
 
             $email = $this->property('email');
             if (isset($email)) {
-                Mail::send('octoclub.tutorial::mail.feedback', $data, function($message) use ($email) {
+                Mail::send('effektive.sendmail:mail:subscribers', $data, function($message) use ($email) {
                     $message->to($email, 'На сайте effektiv появился новый подписчик.');
                 });
             }
+
+            Flash::success( Lang::get('effektiv.main::lang.validation.success') );
         } else {
             Flash::success( Lang::get('effektiv.main::lang.validation.error') );
         }
