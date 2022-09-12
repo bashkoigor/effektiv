@@ -863,6 +863,12 @@ footer .list-inline-item a svg { width: 30px; }
 .where-to-buy .shop-list img:hover {-webkit-transform:scale(0.9); transform:scale(0.9);}
 .font-size-17 {font-size: 17px;}
 .divider-element {width: 60%; border-top: 4px solid #CD1F4B;}
+.subscribers form {
+    width: 100%;
+    max-width: 800px;
+    padding: 30px;
+    margin: auto;
+}
 @media (max-width: 1200px) {
     .btn-quick-order, .btn-add-to-cart { margin-bottom: 20px; }
     .product-page .product-list .item .order-btn { width: 170px; margin: 40px auto 0; }

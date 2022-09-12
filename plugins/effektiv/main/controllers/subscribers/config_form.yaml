@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Subscriber
+
+# Model Form Field configuration
+form: $/effektiv/main/models/subscriber/fields.yaml
+
+# Model Class name
+modelClass: Effektiv\Main\Models\Subscriber
+
+# Default redirect location
+defaultRedirect: effektiv/main/subscribers
+
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: effektiv/main/subscribers/update/:id
+    redirectClose: effektiv/main/subscribers
+
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: effektiv/main/subscribers
+    redirectClose: effektiv/main/subscribers
+
+# Preview page
+preview:
+    title: backend::lang.form.preview_title

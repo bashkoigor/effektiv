@@ -1,0 +1,19 @@
+url = "/subscribe"
+layout = "default"
+title = "Подписка"
+
+[viewBag]
+localeTitle[en] = "Subscribe"
+localeTitle[es] = "Suscripción"
+
+[Subscribers]
+==
+<!-- Page about -->
+<div class="page about my-5">
+    <div class="container subscribers">
+        <div class="page">
+            {% content 'pages/subscribe.htm' %}
+            {% component 'Subscribers' %}
+        </div>
+    </div>
+</div>
