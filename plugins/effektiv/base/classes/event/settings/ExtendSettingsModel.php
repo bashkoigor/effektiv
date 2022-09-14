@@ -3,6 +3,7 @@
 use Input;
 use Effektiv\Base\Models\Settings;
 use Lovata\Shopaholic\Models\Price;
+use System\Helpers\Cache as CacheHelper;
 
 /**
  * Class ExtendSettingsModel
@@ -41,6 +42,8 @@ class ExtendSettingsModel
 		                $obPriceModel->save();
 		        	}
 		        }
+
+                CacheHelper::clear();
 
             }, $this->iPriority);
 
