@@ -7,8 +7,6 @@ use Cms\Classes\ComponentBase;
 
 class SendMail extends ComponentBase {
 
-    protected $email = 'info@effekt-iv.ru';
-
     /**
      * @return array
      */
@@ -20,11 +18,22 @@ class SendMail extends ComponentBase {
         ];
     }
 
+    public function defineProperties()
+    {
+        return [
+            'email' => [
+                'title'       => 'Email',
+                'default' => 'info@effekt-iv.ru',
+                'description' => 'На этот email будут приходить оповещения о обратном звонке и контактной формы.',
+            ]
+        ];
+    }
+
     public function onSendCallBack()
     {
         $vars = (array) Input::get('callBack');
         Mail::send('effektive.sendmail:mail:call_back_form', $vars, function($message) {
-            $message->to($this->email);
+            $message->to($this->property('email'));
         });
     }
 
@@ -32,7 +41,7 @@ class SendMail extends ComponentBase {
     {
         $vars = (array) Input::get('contactForm');
         Mail::send('effektive.sendmail:mail:contact_form', $vars, function($message) {
-            $message->to($this->email);
+            $message->to($this->property('email'));
         });
     }
 }

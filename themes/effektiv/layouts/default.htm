@@ -8,10 +8,13 @@ forceUrl = 1
 [Cart]
 
 [SendMail]
+email = "i.kuligina@textiletorg.ru"
+
 [SiteSettings]
 
 [UserData]
 ==
+<?php
 function onInit() {
 
     /* Set currency by locale */
@@ -35,6 +38,7 @@ function onInit() {
     /* User data */
     $this['obUser'] = $this->UserData->get();
 }
+?>
 ==
 <!doctype html>
 <html lang="en">
