@@ -48,14 +48,14 @@ class Reviews extends ComponentBase
             'product'    => e(Input::get('product')),
             'name'       => e(Input::get('name')),
             'rating'     => e(Input::get('rating')),
-            'message'    => e(Input::get('message'))
+            'text'    => e(Input::get('message'))
         ];
 
         $item = new Review;
         $item->product_id = $data['product_id'];
         $item->name       = $data['name'];
         $item->rating     = $data['rating'];
-        $item->message    = $data['message'];
+        $item->message    = $data['text'];
         $success = $item->save();
 
         if ($success === true) {
