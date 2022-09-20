@@ -10,7 +10,11 @@ return [
         'street'    => 'Calle',
         'house'     => 'Casa',
         'apartment' => 'Departamento',
+        'message'   => 'Revisar',
         'success'   => '¡Formulario enviado con éxito!',
         'error'     => 'Ocurrió un error, el formulario no fue enviado.',
     ],
+    'reviews' => [
+        'success' => 'Su revisión ha sido creada y se mostrará después de la revisión.'
+    ]
 ];

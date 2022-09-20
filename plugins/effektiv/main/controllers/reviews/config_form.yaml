@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Review
+
+# Model Form Field configuration
+form: $/effektiv/main/models/review/fields.yaml
+
+# Model Class name
+modelClass: Effektiv\Main\Models\Review
+
+# Default redirect location
+defaultRedirect: effektiv/main/reviews
+
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: effektiv/main/reviews/update/:id
+    redirectClose: effektiv/main/reviews
+
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: effektiv/main/reviews
+    redirectClose: effektiv/main/reviews
+
+# Preview page
+preview:
+    title: backend::lang.form.preview_title

@@ -2,3 +2,6 @@
 1.0.2:
     - Create the Subscribers table
     - create_subscribers_table.php
+1.0.3:
+    - Create the Reviews table
+    - create_reviews_table.php

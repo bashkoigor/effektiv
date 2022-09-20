@@ -30,6 +30,12 @@ function scrollToTop() {
     });
 }
 
+// Open review modal form
+$(document).on('click', '#btn-review', (e) => {
+    e.preventDefault()
+    $('#reviewForm').modal('show');
+});
+
 // Open call back modal form
 $(document).on('click', '#btn-call-back', (e) => {
     $('#callBackForm').modal('show');

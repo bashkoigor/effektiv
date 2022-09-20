@@ -52,6 +52,7 @@ class Plugin extends PluginBase
     {
         return [
             'Effektiv\Main\Components\Subscribers' => 'Subscribers',
+            'Effektiv\Main\Components\Reviews' => 'Reviews',
         ];
     }
 
@@ -87,11 +88,18 @@ class Plugin extends PluginBase
                 'permissions' => ['effektiv.main.*'],
                 'order'       => 5000,
                 'sideMenu' => [
-                    'items' => [
+                    'subscribers' => [
                         'label'       => 'Подписчики',
                         'url'         => Backend::url('effektiv/main/subscribers'),
                         'icon'        => 'icon-leaf',
                         'permissions' => ['effektiv.subscribers.*'],
+                        'order'       => 500,
+                    ],
+                    'reviews' => [
+                        'label'       => 'Отзывы',
+                        'url'         => Backend::url('effektiv/main/reviews'),
+                        'icon'        => 'icon-leaf',
+                        'permissions' => ['effektiv.reviews.*'],
                         'order'       => 500,
                     ]
                 ],

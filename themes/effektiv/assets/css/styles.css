@@ -821,6 +821,7 @@ footer .list-inline-item a svg { width: 30px; }
     text-align: center;
     font-weight: bold;
 }
+.review .date { font-size: 14px; }
 .property-table { padding-top: 80px; }
 
 .CDEK-widget__popup-mask { z-index: 1030!important; }
@@ -868,6 +869,35 @@ footer .list-inline-item a svg { width: 30px; }
     max-width: 800px;
     padding: 30px;
     margin: auto;
+}
+.review {
+    background: white;
+    padding: 20px;
+    border-radius: 7px;
+    margin-bottom: 20px;
+}
+.star-content {
+    display: inline-block;
+    vertical-align: middle;
+    color: #909090;
+}
+.star-content .star {
+    display: block;
+    float: left;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+}
+.star-content .star:after {
+    color: #dbdbdb;
+    content: "\f006";
+    font-family: "FontAwesome";
+    display: inline-block;
+    left: 0;
+    font-size: 13px;
+}
+.star-content .star.active:after {
+    color: gold;
 }
 @media (max-width: 1200px) {
     .btn-quick-order, .btn-add-to-cart { margin-bottom: 20px; }
