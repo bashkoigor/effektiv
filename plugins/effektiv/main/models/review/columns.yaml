@@ -10,7 +10,7 @@ columns:
         label: ID товара
         searchable: true
     rating:
-        label: Райтинг
+        label: Оценка
         searchable: true
     status:
         label: Статус

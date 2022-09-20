@@ -8,7 +8,7 @@ fields:
         span: left
         type: text
     rating:
-        label: Райтинг
+        label: Оценка
         span: left
         type: dropdown
         default: 5
