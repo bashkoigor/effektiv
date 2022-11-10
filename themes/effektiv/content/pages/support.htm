@@ -196,24 +196,32 @@
                 </h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-                <form>
+            <div class="modal-body" id="supportFormResult">
+                <form class="support-form-needs-validation" novalidate>
+                    <input type="hidden" name="product" value="Страница - Поддержка">
                     <div class="mb-3">
                         <label for="recipient-country" class="col-form-label">СТРАНА:</label>
-                        <input type="text" class="form-control" id="recipient-country">
+                        <input type="text" class="form-control" id="recipient-country" name="recipient_country" required>
+                        <div class="invalid-feedback">
+                            Обязательно для заполнения
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label for="recipient-city" class="col-form-label">ГОРОД:</label>
-                        <input type="text" class="form-control" id="recipient-city">
+                        <input type="text" class="form-control" id="recipient-city" name="recipient_city" required>
+                        <div class="invalid-feedback">
+                            Обязательно для заполнения
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label for="recipient-email" class="col-form-label">E-MAIL:</label>
-                        <input type="text" class="form-control" id="recipient-email">
+                        <input type="text" class="form-control" id="recipient-email" name="recipient_email" required>
+                        <div class="invalid-feedback">
+                            Обязательно для заполнения
+                        </div>
                     </div>
+                    <button type="submit" class="btn btn-primary">Отправить</button>
                 </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Отправить</button>
             </div>
         </div>
     </div>

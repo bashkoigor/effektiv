@@ -71,12 +71,9 @@ function removeCdekData() {
     }
 }
 
-function sendCallBack(name, phone) {
+function sendCallBack(formData) {
     let data = {
-        'callBack': {
-            'name': name,
-            'phone': phone
-        }
+        'callBack': formData
     };
     $.request('SendMail::onSendCallBack', {
         'data': data,
@@ -84,15 +81,9 @@ function sendCallBack(name, phone) {
     });
 }
 
-function sendContactForm(name, email, phone, message, product) {
+function sendContactForm(formData) {
     let data = {
-        'contactForm': {
-            'name': name,
-            'email': email,
-            'phone': phone,
-            'text': message,
-            'product': product
-        }
+        'contactForm': formData
     };
     $.request('SendMail::onSendContactForm', {
         'data': data,
@@ -106,13 +97,21 @@ function sendContactForm(name, email, phone, message, product) {
     });
 }
 
-(function () {
-    'use strict'
+function sendSupportForm(formData) {
+    let data = {
+        'supportForm': formData
+    };
+    $.request('SendMail::onSendSupportForm', {
+        'data': data,
+        'update': {'site/success-call-back': '#supportFormResult'}
+    });
+}
 
-    // Validate quick order modal form
+function bootstrapValidation(formId, callBack) {
+    // Validate form
 
     // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.querySelectorAll('.call-back-needs-validation')
+    var forms = document.querySelectorAll(formId)
 
     // Loop over them and prevent submission
     Array.prototype.slice.call(forms)
@@ -123,37 +122,28 @@ function sendContactForm(name, email, phone, message, product) {
                     event.stopPropagation()
                 } else {
                     event.preventDefault()
-                    var name = form.querySelector('[name="first_name"]').value;
-                    var phone = form.querySelector('[name="phone"]').value;
-                    sendCallBack(name, phone);
+
+                    const inputs = form.elements;
+                    var formData = {};
+                    // Iterate over the form controls
+                    for (let i = 0; i < inputs.length; i++) {
+                        if (inputs[i].nodeName === "INPUT" || inputs[i].nodeName === "TEXTAREA") {
+                            formData[inputs[i].name] = inputs[i].value;
+                        }
+                    }
+                    callBack(formData);
                 }
                 form.classList.add('was-validated')
             }, false)
         })
+}
 
-    // Validate contact form
+// IIFE (Immediately Invoked Function Expression)
+(function () {
+    'use strict'
 
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms_ = document.querySelectorAll('.contact-form-needs-validation')
+    bootstrapValidation('.support-form-needs-validation', sendSupportForm);
+    bootstrapValidation('.call-back-needs-validation', sendCallBack);
+    bootstrapValidation('.contact-form-needs-validation', sendContactForm);
 
-    // Loop over them and prevent submission
-    Array.prototype.slice.call(forms_)
-        .forEach(function (form) {
-            form.addEventListener('submit', function (event) {
-                if (!form.checkValidity()) {
-                    event.preventDefault()
-                    event.stopPropagation()
-                } else {
-                    event.preventDefault()
-                    var name = form.querySelector('[name="first_name"]').value;
-                    var email = form.querySelector('[name="email"]').value;
-                    var phone = form.querySelector('[name="phone"]').value;
-                    var message = form.querySelector('[name="message"]').value;
-                    var product = form.querySelector('[name="product"]').value;
-                    sendContactForm(name, email, phone, message, product);
-                }
-
-                form.classList.add('was-validated')
-            }, false)
-        })
 })()

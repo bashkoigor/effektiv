@@ -44,4 +44,12 @@ class SendMail extends ComponentBase {
             $message->to($this->property('email'));
         });
     }
+
+    public function onSendSupportForm()
+    {
+        $vars = (array) Input::get('supportForm');
+        Mail::send('effektive.sendmail:mail:support_form', $vars, function($message) {
+            $message->to($this->property('email'));
+        });
+    }
 }
