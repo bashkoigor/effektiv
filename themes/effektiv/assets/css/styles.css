@@ -896,9 +896,19 @@ footer .list-inline-item a svg { width: 30px; }
     left: 0;
     font-size: 13px;
 }
-.star-content .star.active:after {
-    color: gold;
-}
+.star-content .star.active:after {color: gold;}
+.page.support h2 {margin: 0px;}
+
+.support .accordion-item {border: none; margin: 5px 0; border-bottom: none;}
+.support .accordion-button:not(.collapsed) {box-shadow: none;}
+.support .accordion-button:focus {box-shadow: none; border-color: transparent; background: transparent; color: #cd1f4b;}
+.support .accordion-button:not(.collapsed) {background: transparent; color: #cd1f4b;}
+.support .accordion-button:hover {color: #cd1f4b;}
+.support i.fa-solid.fa-folder, i.fa-regular.fa-file-pdf {color: #cd1f4b;}
+.support .accordion-button::after {background-image: none;}
+.support .accordion-body a {color: #939393; font-size: 12px; font-weight: bold;}
+.support .accordion-body a:hover {color: #cd1f4b;}
+.support .accordion ul {list-style-type: none; padding-left: 1rem; margin: 0px;}
 @media (max-width: 1200px) {
     .btn-quick-order, .btn-add-to-cart { margin-bottom: 20px; }
     .product-page .product-list .item .order-btn { width: 170px; margin: 40px auto 0; }
