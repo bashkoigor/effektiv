@@ -25,7 +25,7 @@ var widjet = new ISDEKWidjet({
     hideMessages: false,
     path: 'https://widget.cdek.ru/widget/scripts/',
     //servicepath: 'https://widget.cdek.ru/widget/scripts/service.php', //ссылка на файл service.php на вашем сайте
-    servicepath: 'https://effektiv.ie/sdek/service.php',
+    servicepath: 'https://360.effektiv.shop/sdek/service.php',
     choose: true,
     popup: true,
     country: 'Россия',
