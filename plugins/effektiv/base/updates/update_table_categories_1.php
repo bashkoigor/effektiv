@@ -26,8 +26,7 @@ class UpdateTableCategories1 extends Migration
             'product_video',
             'product_description',
             'product_specifications',
-            'product_list_title',
-            'product_3d_video'
+            'product_list_title'
         ];
 
         foreach ($arNewFieldList as $iKey => $sFieldName) {
@@ -63,8 +62,7 @@ class UpdateTableCategories1 extends Migration
             'product_video',
             'product_description',
             'product_specifications',
-            'product_list_title',
-            'product_3d_video'
+            'product_list_title'
         ];
 
         foreach ($arNewFieldList as $iKey => $sFieldName) {

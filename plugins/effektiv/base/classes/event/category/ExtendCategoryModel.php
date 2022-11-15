@@ -27,8 +27,7 @@ class ExtendCategoryModel
                 'product_video',
                 'product_description',
                 'product_specifications',
-                'product_list_title',
-                'product_3d_video'
+                'product_list_title'
             ];
 
             $obCategory->translatable = array_merge($obCategory->translatable, $arNewFieldList);
@@ -127,16 +126,6 @@ class ExtendCategoryModel
                 'comment' => 'Логика выода товаров - partial/product/product-list.htm',
                 'span' => 'left',
                 'type' => 'richeditor',
-                'size' => 'huge',
-                'language' => 'html',
-            ];
-
-            $widget->tabs['fields']['product_3d_video'] = [
-                'label' => '3D и youtube видео',
-                'tab' => 'Элементы карточки товара',
-                'comment' => '',
-                'span' => 'left',
-                'type' => 'textarea',
                 'size' => 'huge',
                 'language' => 'html',
             ];

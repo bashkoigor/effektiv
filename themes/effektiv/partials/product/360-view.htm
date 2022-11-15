@@ -1,0 +1,17 @@
+<div class="modal fade" id="viewProductModal" tabindex="-1" aria-labelledby="360ModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title" id="360ModalLabel">{{ obProduct.name }}</h6>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <iframe id="inlineFrameExample"
+                     title="360º Product view"
+                     src="{{ obProduct.property.getByCode('product_360').property_value.getValueString() }}"
+                     style='height: 100%; width: 100%;' frameborder="0" scrolling="no">
+                </iframe>
+            </div>
+        </div>
+    </div>
+</div>
