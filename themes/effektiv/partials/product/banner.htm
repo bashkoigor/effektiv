@@ -1,5 +1,5 @@
 {% if obProduct.property.getByCode('product_video_banner').property_value.getValueString() is not empty %}
 	{{ obProduct.property.getByCode('product_video_banner').property_value.getValueString()|raw }}
-{% else %}
+{% elseif productInheritParentElement == 'Yes' or productInheritParentElement is empty %}
 	{{obCategory.product_video_banner|raw}}
 {% endif %}

@@ -41,7 +41,7 @@ function onInit() {
     $this['obOffer'] = $obOffer;
     $this['obProductList'] = $this->ProductList->make()->category($obCategory->id)->take(6);
 
-    $this['arHide'] = [12,13,14];
+    $this['productInheritParentElement'] = $obProduct->property->getByCode('product_inherit_parent_element')->property_value->getValueString();
 
     $this->addJs('assets/js/product.js');
 }

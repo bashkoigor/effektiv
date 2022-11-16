@@ -51,7 +51,7 @@ class ExtendCategoryModel
 
             $widget->tabs['fields']['product_video_banner'] = [
                 'label' => 'Баннер',
-                'tab' => 'Элементы карточки товара',
+                'tab' => 'Общие элементы в карточке товара',
                 'comment' => '',
                 'span' => 'left',
                 'type' => 'richeditor',
@@ -61,7 +61,7 @@ class ExtendCategoryModel
 
             $widget->tabs['fields']['product_detail'] = [
                 'label' => 'Товар в деталях',
-                'tab' => 'Элементы карточки товара',
+                'tab' => 'Общие элементы в карточке товара',
                 'comment' => '',
                 'span' => 'left',
                 'type' => 'textarea',
@@ -71,7 +71,7 @@ class ExtendCategoryModel
 
             $widget->tabs['fields']['product_benefits'] = [
                 'label' => 'Ключевые преимущества (иконки)',
-                'tab' => 'Элементы карточки товара',
+                'tab' => 'Общие элементы в карточке товара',
                 'comment' => '',
                 'span' => 'left',
                 'type' => 'textarea',
@@ -81,7 +81,7 @@ class ExtendCategoryModel
 
             $widget->tabs['fields']['product_models'] = [
                 'label' => 'Блок фотокарусель (выбор моделей)',
-                'tab' => 'Элементы карточки товара',
+                'tab' => 'Общие элементы в карточке товара',
                 'comment' => '',
                 'span' => 'left',
                 'type' => 'richeditor',
@@ -92,7 +92,7 @@ class ExtendCategoryModel
 
             $widget->tabs['fields']['product_video'] = [
                 'label' => 'Видео блок',
-                'tab' => 'Элементы карточки товара',
+                'tab' => 'Общие элементы в карточке товара',
                 'comment' => '',
                 'span' => 'left',
                 'type' => 'textarea',
@@ -102,7 +102,7 @@ class ExtendCategoryModel
 
             $widget->tabs['fields']['product_description'] = [
                 'label' => 'Блок описаня товара',
-                'tab' => 'Элементы карточки товара',
+                'tab' => 'Общие элементы в карточке товара',
                 'comment' => '',
                 'span' => 'left',
                 'type' => 'richeditor',
@@ -112,7 +112,7 @@ class ExtendCategoryModel
 
             $widget->tabs['fields']['product_specifications'] = [
                 'label' => 'Технические характеристики (таблица)',
-                'tab' => 'Элементы карточки товара',
+                'tab' => 'Общие элементы в карточке товара',
                 'comment' => '',
                 'span' => 'left',
                 'type' => 'richeditor',
@@ -122,7 +122,7 @@ class ExtendCategoryModel
 
             $widget->tabs['fields']['product_list_title'] = [
                 'label' => 'Список товаров (шапка)',
-                'tab' => 'Элементы карточки товара',
+                'tab' => 'Общие элементы в карточке товара',
                 'comment' => 'Логика выода товаров - partial/product/product-list.htm',
                 'span' => 'left',
                 'type' => 'richeditor',

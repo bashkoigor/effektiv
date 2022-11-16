@@ -1,6 +1,6 @@
 {% if obProduct.property.getByCode('product_description').property_value.getValueString() is not empty %}
 	{{ obProduct.property.getByCode('product_description').property_value.getValueString()|raw }}
-{% else %}
+{% elseif productInheritParentElement == 'Yes' or productInheritParentElement is empty %}
 	{{obCategory.product_description|raw}}
 {% endif %}
 

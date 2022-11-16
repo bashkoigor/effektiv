@@ -1,4 +1,4 @@
-{% if obCategory.id not in arHide %}
+{% if productInheritParentElement == 'Yes' or productInheritParentElement is empty %}
 <div class="container product-list">
     
     {% if obProduct.property.getByCode('product_list_title').property_value.getValueString() is not empty %}

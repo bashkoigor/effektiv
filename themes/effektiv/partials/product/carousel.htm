@@ -1,4 +1,4 @@
-{% if obCategory.id not in arHide %}
+{% if productInheritParentElement == 'Yes' or productInheritParentElement is empty %}
 <div class="container-fluid carousel" id="carousel-height">
     <div class="container">
         <div class="row">
@@ -10,11 +10,11 @@
             <div class="col-sm-12">
                 <div id="gallery-carousel" class="carousel">
                     {% if obProduct.images is not empty %}
-                        {% for obImage in obProduct.images %}
-                            <div class="carousel__slide" data-src="{{ obImage.getPath() }}" data-fancybox="gallery">
-                                <img src="{{ obImage.getPath() }}" alt="{{ obImage.description }}" title="{{ obImage.title }}" />
-                            </div>
-                        {% endfor %}
+                    {% for obImage in obProduct.images %}
+                    <div class="carousel__slide" data-src="{{ obImage.getPath() }}" data-fancybox="gallery">
+                        <img src="{{ obImage.getPath() }}" alt="{{ obImage.description }}" title="{{ obImage.title }}" />
+                    </div>
+                    {% endfor %}
                     {% endif %}
                 </div>
             </div>
